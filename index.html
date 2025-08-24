@@ -1,0 +1,167 @@
+import { useState, useEffect } from 'react';
+
+export default function MayhemsHomeLanding() {
+  const [lightboxImg, setLightboxImg] = useState(null);
+
+  // ---- Analytics helpers ----
+  const track = (event, params = {}) => {
+    try {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event, ...params });
+    } catch {}
+  };
+
+  const tracked = (base, content) => {
+    try {
+      const u = new URL(base);
+      u.searchParams.set('utm_source', 'mayhems_home');
+      u.searchParams.set('utm_medium', 'website');
+      u.searchParams.set('utm_campaign', 'primary_cta');
+      if (content) u.searchParams.set('utm_content', content);
+      return u.toString();
+    } catch {
+      return base;
+    }
+  };
+
+  useEffect(() => {
+    const id = window.GTM_CONTAINER_ID || 'GTM-XXXXXXX';
+    if (!document.getElementById('gtm-script')) {
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        const f = d.getElementsByTagName(s)[0];
+        const j = d.createElement(s);
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i;
+        j.id = 'gtm-script';
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', id);
+    }
+    track('pageview');
+  }, []);
+
+  const JOTFORM_ADOPTION_URL = 'https://jotform.com/<your-adoption-form-id>';
+  const JOTFORM_MEET_URL = 'https://jotform.com/<your-meet-and-greet-id>';
+  const DONATE_URL = 'https://jotform.com/<your-donation-form-or-processor>';
+  const SHOP_URL = 'https://yourshopifystore.com';
+
+  // Chief Mayhem Navigator artwork URL
+  const CHIEF_IMG = 'https://placehold.co/600x800?text=Chief+Mayhem+Navigator'; // replace with hosted illustration URL
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+      {/* existing styles here */}
+
+      {/* Lightbox overlay */}
+      {lightboxImg && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50" onClick={() => setLightboxImg(null)}>
+          <img src={lightboxImg} alt="Enlarged" className="max-h-[90%] max-w-[90%] border-4 border-[var(--yellow)] shadow-2xl" />
+        </div>
+      )}
+
+      {/* ---- Hero CTAs (tracked) ---- */}
+      <header className="relative overflow-hidden">
+        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-24 grid lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <h1 className="comic-head text-4xl lg:text-6xl font-black text-[var(--yellow)] ink-outline leading-tight">Where Chaos Meets Cuddles</h1>
+            <p className="comic-body mt-5 text-lg text-white/90">Be the hero in a rescue tale! Our League saves animals with joy, wit, and serious heart. Ready to adopt a sidekick, fuel a mission, or gear up in the shop?</p>
+            <div className="mt-7 flex flex-wrap gap-4">
+              <a href={tracked(DONATE_URL, 'hero-donate')} onClick={() => track('hero_cta_click', { type: 'donate' })} target="_blank" rel="noreferrer" className="btn-comic bg-[var(--yellow)] text-black px-5 py-3 comic-head text-xl">Stock the Treat Fund</a>
+              <a href={tracked(JOTFORM_ADOPTION_URL, 'hero-adopt')} onClick={() => track('hero_cta_click', { type: 'adopt' })} target="_blank" rel="noreferrer" className="btn-comic bg-[var(--magenta)] text-white px-5 py-3 comic-head text-xl">Recruit a Snuggle Sidekick</a>
+              <a href={tracked(SHOP_URL, 'hero-shop')} onClick={() => track('hero_cta_click', { type: 'shop' })} target="_blank" rel="noreferrer" className="btn-comic bg-[var(--purple)] text-white px-5 py-3 comic-head text-xl">Gear Up Like a Hero</a>
+            </div>
+          </div>
+
+          {/* Chief Mayhem Navigator image */}
+          <div className="panel p-3 bg-[var(--paper)]">
+            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border-4 border-black">
+              <img src={CHIEF_IMG} alt="Chief Mayhem Navigator" className="absolute inset-0 h-full w-full object-cover" />
+              <div className="absolute bottom-0 left-0 right-0 bg-[var(--yellow)] text-black p-3 border-t-4 border-black">
+                <p className="comic-head text-xl text-center">Chief Mayhem Navigator</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* ---- Adopt ---- */}
+      <section id="adopt" className="py-12 bg-[var(--paper)]">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="comic-head text-4xl text-[var(--yellow)] ink-outline">Adopt a Sidekick</h2>
+          <div className="mt-6 grid md:grid-cols-3 gap-6">
+            {[1,2,3].map(i => (
+              <div key={i} className="panel p-4 bg-black/60">
+                <div className="aspect-square rounded-xl overflow-hidden border-4 border-black halftone relative cursor-pointer" onClick={() => { setLightboxImg(`https://placehold.co/400x400?text=Adoptable+${i}`); track('adopt_image_open', { index: i }); }}>
+                  <img src={`https://placehold.co/400x400?text=Adoptable+${i}`} alt={`Adoptable ${i}`} className="absolute inset-0 h-full w-full object-cover" />
+                </div>
+                <h3 className="comic-head text-2xl mt-3 text-[var(--magenta)]">Hero-in-Training #{i}</h3>
+                <p className="comic-body text-white/85">Sweet, brave, and ready for their origin story. Meet them today.</p>
+                <a href={tracked(JOTFORM_ADOPTION_URL, `adopt-card-${i}`)} onClick={() => track('adopt_cta_click', { index: i })} target="_blank" rel="noreferrer" className="mt-3 btn-comic bg-[var(--yellow)] text-black px-4 py-2 comic-head">Apply for a Belly-Rub Buddy</a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---- Stories Strip ---- */}
+      <section id="stories" className="relative py-12 bg-[var(--purple)]">
+        <div className="absolute inset-0 halftone opacity-30" />
+        <div className="relative max-w-7xl mx-auto px-6">
+          <h2 className="comic-head text-4xl text-[var(--yellow)] ink-outline">Rescue Stories</h2>
+          <div className="mt-6 grid md:grid-cols-3 gap-6">
+            {[{
+              title: 'Nova the Brave',
+              description: 'Found her forever home after recovering with our League.',
+              img: 'https://placehold.co/600x400?text=Nova'
+            },{
+              title: 'Shadow Finds Home',
+              description: 'Rescued from the streets and adopted into a loving family.',
+              img: 'https://placehold.co/600x400?text=Shadow'
+            },{
+              title: 'Pepper’s Big Day',
+              description: 'A joyful adoption day that marked a new beginning.',
+              img: 'https://placehold.co/600x400?text=Pepper'
+            }].map((story, i)=> (
+              <article key={i} className="panel p-4 bg-[var(--paper)]">
+                <div className="aspect-video rounded-xl overflow-hidden border-4 border-black halftone relative cursor-pointer" onClick={() => { setLightboxImg(story.img); track('story_image_open', { title: story.title, index: i }); }}>
+                  <img src={story.img} alt={story.title} className="absolute inset-0 h-full w-full object-cover" />
+                  {/* Chief cameo watermark */}
+                  <img src={CHIEF_IMG} alt="Chief cameo" className="absolute bottom-2 right-2 h-10 w-10 rounded-full border-2 border-[var(--yellow)] shadow-lg opacity-80" />
+                  <span className="absolute top-2 left-2 bg-[var(--yellow)] text-black comic-head text-base px-3 py-1 border-2 border-black">Issue #{i+1}</span>
+                </div>
+                <h3 className="comic-head text-2xl mt-4 text-[var(--magenta)]">{story.title}</h3>
+                <p className="comic-body text-white/85 mt-2">{story.description}</p>
+                <a href={tracked(JOTFORM_MEET_URL, `story-${i}`)} onClick={() => track('story_meet_cta_click', { title: story.title, index: i })} target="_blank" rel="noreferrer" className="inline-block mt-3 btn-comic bg-[var(--yellow)] text-black px-4 py-2 comic-head">Schedule Snuggles</a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---- Floating AI Bot with Chief avatar ---- */}
+      <div className="fixed bottom-5 right-5">
+        <input id="bot-toggle" type="checkbox" className="hidden peer" />
+        <label htmlFor="bot-toggle" className="btn-comic bg-[var(--magenta)] text-white comic-head px-4 py-3 cursor-pointer inline-flex items-center gap-2">
+          <span className="text-xl">🦸‍♀️</span> Ask Chief
+        </label>
+        <div className="peer-checked:block hidden mt-3 w-[320px] bg-[var(--yellow)] text-black chat-pop p-4">
+          <div className="flex items-start gap-3">
+            <img src={CHIEF_IMG} alt="Chief Mayhem" className="h-10 w-10 rounded-full border-2 border-black object-cover"/>
+            <div>
+              <p className="comic-head text-xl">Chief Mayhem</p>
+              <p className="comic-body text-sm">“How can I help today, citizen?”</p>
+            </div>
+          </div>
+          <div className="mt-3 flex gap-2 flex-wrap">
+            <a href={tracked(JOTFORM_ADOPTION_URL, 'bot-adopt')} onClick={() => track('bot_cta_click', { type: 'adopt' })} target="_blank" rel="noreferrer" className="btn-comic bg-white text-black px-3 py-2 comic-body text-sm">Recruit a Sidekick</a>
+            <a href={tracked(DONATE_URL, 'bot-donate')} onClick={() => track('bot_cta_click', { type: 'donate' })} target="_blank" rel="noreferrer" className="btn-comic bg-white text-black px-3 py-2 comic-body text-sm">Treat Fund</a>
+            <a href={tracked(JOTFORM_MEET_URL, 'bot-meet')} onClick={() => track('bot_cta_click', { type: 'meet' })} target="_blank" rel="noreferrer" className="btn-comic bg-white text-black px-3 py-2 comic-body text-sm">Schedule Snuggles</a>
+          </div>
+        </div>
+      </div>
+
+      {/* ... footer ... */}
+    </div>
+  );
+} 
