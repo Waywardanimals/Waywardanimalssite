@@ -1,21 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wayward Animals</title>
-    <style>
-        .logo {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 100px;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mayhem’s Home for Wayward Animals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&family=Raleway:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--purple:#6A0DAD;--magenta:#FF00A8;--yellow:#FFD400;--ink:#000}
+    body{margin:0;font-family:"Raleway",sans-serif;background:#000;color:#fff}
+    .comic-head{font-family:"Bangers",sans-serif}
+    .btn-comic{position:relative;display:inline-block;padding:12px 20px;border:3px solid var(--ink);border-radius:14px;font-family:"Bangers",sans-serif;box-shadow:4px 4px 0 var(--ink);transition:.1s;background:#fff;color:#000;overflow:hidden;text-decoration:none}
+    .btn-comic:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+    .btn-comic.magenta{background:var(--magenta);color:#fff}
+    .btn-comic.purple{background:var(--purple);color:#fff}
+    .btn-comic.yellow{background:var(--yellow);color:#000}
+    section{position:relative;margin:40px auto;max-width:1200px;padding:40px 20px;border:6px solid var(--ink);box-shadow:12px 12px 0 var(--ink);background:#111;border-radius:18px}
+    section h2{margin-top:0}
+    /* POW bubble */
+    .pow-bubble {
+      display:none;
+      position:absolute;
+      top:-20px;
+      left:50%;
+      transform:translateX(-50%);
+      background:var(--yellow);
+      color:#000;
+      border:4px solid var(--ink);
+      border-radius:50%;
+      padding:30px 20px;
+      text-align:center;
+      box-shadow:8px 8px 0 var(--ink);
+      z-index:1000;
+      width:280px;
+      clip-path: polygon(
+        50% 0%, 60% 10%, 100% 10%, 70% 30%, 90% 60%, 60% 55%,
+        50% 100%, 40% 55%, 10% 60%, 30% 30%, 0% 10%, 40% 10%
+      );
+    }
+    .pow-bubble:after {
+      content:"";
+      position:absolute;
+      bottom:-20px;
+      left:50%;
+      transform:translateX(-50%);
+      border-width:20px 15px 0;
+      border-style:solid;
+      border-color:var(--yellow) transparent transparent transparent;
+      filter:drop-shadow(2px 2px 0 var(--ink));
+    }
+    footer{background:#111;border-top:6px solid var(--ink);padding:30px 20px;text-align:center}
+    footer a{margin:0 10px;color:var(--yellow);text-decoration:none;font-family:"Bangers",sans-serif}
+  </style>
 </head>
 <body>
-    <img src="logo.jpg" alt="Wayward Animals Logo" class="logo">
-    <img src="assets/chaos-heroine-poster.jpg" alt="Chaos Heroine Poster">
-    <!-- Other content -->
+
+  <!-- Hero Content -->
+  <section id="hero" style="text-align:center;padding:60px 20px">
+    <img src="assets/Mayhem-Logo.jpg" 
+         alt="Mayhem's Home Logo" style="max-width:220px;margin-bottom:20px">
+    <h1 class="comic-head" style="font-size:48px;color:var(--yellow);margin:0 0 20px">Welcome to Mayhem’s Home</h1>
+    <p style="max-width:720px;margin:0 auto 24px;font-size:18px;color:#eee;line-height:1.6">
+      We rescue the unruly, the loud, and the misunderstood, and turn them into heroes. From wild labs to wall-climbing hounds, every chaos creature finds their power here.
+    </p>
+
+    <!-- Chief Mayhem Navigator -->
+    <div id="chief-container" style="position:relative;max-width:400px;margin:30px auto;cursor:pointer">
+      <img src="assets/Chief-Mayhem.jpg" 
+           alt="Chief Mayhem Navigator" 
+           style="width:100%;border:6px solid var(--ink);border-radius:18px;box-shadow:10px 10px 0 var(--ink)">
+      <div id="chief-menu" class="pow-bubble">
+        <p class="comic-head" style="font-size:20px;margin:0 0 12px">Choose your chaos:</p>
+        <a href="#adopt" class="btn-comic purple">🐾 Adopt a Sidekick</a>
+        <a href="https://square.link/u/GCiL67uC?src=sheet" target="_blank" class="btn-comic magenta">💜 Fuel the Mayhem</a>
+        <a href="https://chaoscompany2009.myshopify.com" target="_blank" class="btn-comic purple">🛍️ Outfit Yourself</a>
+        <a href="about.html" class="btn-comic yellow">📖 Chaos Wrangling 101</a>
+      </div>
+    </div>
+
+    <!-- CTAs -->
+    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+      <a href="#donate" id="cta-hero-donate" class="btn-comic magenta">Fuel the Mayhem</a>
+      <a href="#adopt" class="btn-comic purple">Adopt a Sidekick</a>
+      <a href="#fund" class="btn-comic yellow">Belly Rub Fund</a>
+      <a href="about.html" class="btn-comic" style="background:#fff;color:#000">Chaos Wrangling 101</a>
+      <a href="https://checkout.square.site/merchant/ML3P53GMV910M/checkout/6OCEZCMDXKLHS52CC2VM5Y3T" target="_blank" class="btn-comic magenta">Join the Chaos & Co League – $10/mo</a>
+      <div style="text-align:center">
+        <a href="https://chaoscompany2009.myshopify.com" target="_blank" class="btn-comic purple">Outfit Yourself</a>
+        <p style="margin-top:6px;font-size:14px;color:var(--yellow);font-weight:bold">League Members save 10% every time!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rescue Stories -->
+  <section id="stories">
+    <h2 class="comic-head" style="color:var(--yellow); font-size:40px;">Rescue Stories</h2>
+    <article><h3 class="comic-head" style="color:var(--magenta)">Wiley — The Unruly Black Lab</h3>
+      <p>Wiley was a puppy adopted as a gift for an elderly woman... she found her calling as an ESA for a Mayhem’s Home volunteer on the autism spectrum.</p></article>
+    <article><h3 class="comic-head" style="color:var(--magenta)">Katie — The Loudmouth Coonhound</h3>
+      <p>Katie arrived with a howl... surprise litter of 8 before moving on with her handler. Alder and Douglas, the twins, stayed behind…</p></article>
+    <article><h3 class="comic-head" style="color:var(--magenta)">Alder & Douglas — The Wall-Climbing Twins</h3>
+      <p>They climbed walls, tunneled under fences, counter-surfed, and were a whole-ass nuisance until 18 months… then chilled into good boys (mostly).</p></article>
+  </section>
+
+  <!-- Fix-It Fundraiser -->
+  <section id="fund">
+    <h2 class="comic-head" style="color:var(--yellow);">Fix-It Fund: Spay & Neuter Access</h2>
+    <p>We’re launching a low-income spay & neuter fund to help domestic violence survivors and families keep their pets—and reduce overpopulation. Goal: $10,000.</p>
+    <div style="background:#000;border:4px solid var(--ink);border-radius:14px;padding:10px;">
+      <div style="height:18px;background:#222;border-radius:12px;overflow:hidden">
+        <div style="height:100%;width:20%;background:linear-gradient(90deg,var(--magenta),var(--yellow));"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;color:#ccc;font-size:14px;margin-top:6px">
+        <span>Raised: $2,000</span><span>Goal: $10,000</span>
+      </div>
+    </div>
+    <a href="https://square.link/u/GCiL67uC?src=sheet" target="_blank" class="btn-comic yellow" style="margin-top:12px;display:inline-block">Donate to the Fix-It Fund</a>
+  </section>
+
+  <!-- Adoptables -->
+  <section id="adopt">
+    <h2 class="comic-head" style="color:var(--yellow);">Adoptables</h2>
+    <a href="https://www.adoptapet.com/pet/6764816" target="_blank" class="btn-comic purple">Adoptable #1 – Wiley</a>
+    <a href="https://www.adoptapet.com/pet/6764684" target="_blank" class="btn-comic magenta">Adoptable #2 – Alder</a>
+    <a href="https://www.adoptapet.com/" target="_blank" class="btn-comic yellow">Adoptable #3 – Douglas (coming soon)</a>
+  </section>
+
+  <!-- Thank You -->
+  <section id="thanks" style="display:none">
+    <h2 class="comic-head" style="color:var(--yellow)">POW! You did the thing 🎉</h2>
+    <p>Your signed adoption application has been sent. League Members: check your email for your 10% merch discount code — <strong>BELLYRUBS</strong>.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p class="comic-head" style="color:var(--yellow);font-size:22px">Follow the Mayhem</p>
+    <a href="https://facebook.com/YOURPAGE" target="_blank">Facebook</a>
+    <a href="https://instagram.com/YOURPAGE" target="_blank">Instagram</a>
+    <a href="https://tiktok.com/@YOURPAGE" target="_blank">TikTok</a>
+    <p style="margin-top:20px;color:#777;font-size:14px">© <script>document.write(new Date().getFullYear());</script> Mayhem’s Home • 501(c)(3) eligible</p>
+  </footer>
+
+  <!-- Confetti + Chief Toggle -->
+  <canvas id="confetti" style="position:fixed;inset:0;pointer-events:none;z-index:2000;display:none"></canvas>
+  <script>
+    (function(){
+      var chief=document.getElementById('chief-container');
+      var menu=document.getElementById('chief-menu');
+      if(chief&&menu){
+        chief.addEventListener('click',function(e){
+          var visible=menu.style.display==='block';
+          menu.style.display=visible?'none':'block';
+          e.stopPropagation();
+        });
+        document.addEventListener('click',function(e){
+          if(!chief.contains(e.target))menu.style.display='none';
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
