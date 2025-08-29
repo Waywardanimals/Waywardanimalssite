@@ -23,21 +23,21 @@
     :root{--purple:#6A0DAD;--magenta:#FF00A8;--yellow:#FFD400;--ink:#000;--lime:#32CD32}
     body{margin:0;font-family:"Raleway",sans-serif;background:#000;color:#fff}
     .comic-head{font-family:"Bangers",sans-serif}
-    .btn-comic {
+   .btn-comic {
   position: relative;
   display: inline-block;
   padding: 12px 20px;
   border: 3px solid var(--ink);
-  border-radius: 0; /* <-- Makes it square */
-  font-family: "Raleway", sans-serif; /* (optional: use simpler font) */
-  box-shadow: none; /* (optional: remove cartoon shadow) */
+  border-radius: 0;           /* Makes button corners square */
+  font-family: "Raleway", sans-serif; /* Optional: uses your main site font */
+  box-shadow: none;           /* Removes comic drop shadow */
   transition: .1s;
-background:#fff;color:#000;text-decoration:none}
-    .btn-comic:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
-    .btn-comic.magenta{background:var(--magenta);color:#fff}
-    .btn-comic.purple{background:var(--purple);color:#fff}
-    .btn-comic.yellow{background:var(--yellow);color:#000}
-    .btn-comic.lime{background:var(--lime);color:#000}
+}
+.btn-comic:hover {
+  transform: none;            /* Remove comic hover effect (optional) */
+  box-shadow: none;
+}
+
     section{position:relative;margin:40px auto;max-width:1200px;padding:40px 20px;border:6px solid var(--ink);box-shadow:12px 12px 0 var(--ink);background:#111;border-radius:18px}
     .glow-tag{font-family:"Bangers",sans-serif;font-size:28px;color:#fff;margin:4px 0 10px;padding:4px 12px;border:3px solid var(--ink);border-radius:12px;background:linear-gradient(90deg, rgba(255,0,168,.2), rgba(255,212,0,.15));box-shadow:0 0 12px rgba(255,0,168,.5), 0 0 22px rgba(255,212,0,.35), 6px 6px 0 var(--ink)}
     .pow-bubble{display:none;position:absolute;top:-20px;left:50%;transform:translateX(-50%);background:var(--yellow);color:#000;border:4px solid var(--ink);border-radius:50%;padding:30px 20px;text-align:center;box-shadow:8px 8px 0 var(--ink);z-index:1000;width:300px;clip-path:polygon(50% 0%,60% 10%,100% 10%,70% 30%,90% 60%,60% 55%,50% 100%,40% 55%,10% 60%,30% 30%,0% 10%,40% 10%)}
