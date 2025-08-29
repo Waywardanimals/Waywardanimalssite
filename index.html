@@ -23,7 +23,16 @@
     :root{--purple:#6A0DAD;--magenta:#FF00A8;--yellow:#FFD400;--ink:#000;--lime:#32CD32}
     body{margin:0;font-family:"Raleway",sans-serif;background:#000;color:#fff}
     .comic-head{font-family:"Bangers",sans-serif}
-    .btn-comic{position:relative;display:inline-block;padding:12px 20px;border:3px solid var(--ink);border-radius:14px;font-family:"Bangers",sans-serif;box-shadow:4px 4px 0 var(--ink);transition:.1s;background:#fff;color:#000;text-decoration:none}
+    .btn-comic {
+  position: relative;
+  display: inline-block;
+  padding: 12px 20px;
+  border: 3px solid var(--ink);
+  border-radius: 0; /* <-- Makes it square */
+  font-family: "Raleway", sans-serif; /* (optional: use simpler font) */
+  box-shadow: none; /* (optional: remove cartoon shadow) */
+  transition: .1s;
+background:#fff;color:#000;text-decoration:none}
     .btn-comic:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
     .btn-comic.magenta{background:var(--magenta);color:#fff}
     .btn-comic.purple{background:var(--purple);color:#fff}
