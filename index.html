@@ -43,21 +43,20 @@
   .pow-bubble {
   display: none;
   position: absolute;
-  top: 0;                 /* Align with bottom of image */
-  left: 0;                /* Align with left of image */
-  width: 100%;            /* half width as hero image container */
+  top: 0;                 /* Align with center of image */
+  left: 0;                /* Align with right of image */
+  width: 100%;            /* Same width as hero image container */
   height: 100%;           /* Same height as hero image container */
   background: var(--yellow);
   color: #000;
   border: 4px solid var(--ink);
-  border-radius: 0;       /* Makes it a square */
-  box-shadow: none;       /* Remove comic shadow */
-  padding: 0;             /* Remove comic padding, adjust as needed */
+  border-radius: 0;       /* Makes it a oval */
+  box-shadow: none;    
+  padding: 0;          
   text-align: center;
   z-index: 10;          
 }
 
-.pow-bubble:after {
   display: none;        
 } footer{background:#111;border-top:6px solid var(--ink);padding:30px 20px;text-align:center}
     footer a{margin:0 10px;color:var(--yellow);text-decoration:none;font-family:"Bangers",sans-serif}
@@ -98,7 +97,7 @@ nta" id="btnDonatePow">Fuel the Mayhem</a>
            onerror="this.onerror=null;this.src='hero.png';">
       <div id="chief-menu" class="pow-bubble">
         <p class="comic-head" style="font-size:20px;margin:0 0 10px">Choose your chaos:</p>
-        <a href="#adopt" class="btn-comic purple" id="btnAdoptPow">🐾 Adopt a Sidekick</a>
+        <a href="#adopt" class="btn-comic purple" id="btnAdoptPow"> Adopt a Sidekick</a>
         <a href="https://square.link/u/GCiL67uC?src=sheet" target="_blank" class="btn-comic magenta" id="btnDonatePow"> Fuel the Mayhem</a>
         <a href="https://chaoscompany2009.myshopify.com" target="_blank" class="btn-comic purple" id="btnShopPow"> Outfit Yourself</a>
         <a href="about.html" class="btn-comic" style="background:#fff;color:#000" id="btnAboutPow"> Chaos Wrangling 101</a>
