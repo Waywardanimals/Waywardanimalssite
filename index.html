@@ -40,9 +40,26 @@
 
     section{position:relative;margin:40px auto;max-width:1200px;padding:40px 20px;border:6px solid var(--ink);box-shadow:12px 12px 0 var(--ink);background:#111;border-radius:18px}
     .glow-tag{font-family:"Bangers",sans-serif;font-size:28px;color:#fff;margin:4px 0 10px;padding:4px 12px;border:3px solid var(--ink);border-radius:12px;background:linear-gradient(90deg, rgba(255,0,168,.2), rgba(255,212,0,.15));box-shadow:0 0 12px rgba(255,0,168,.5), 0 0 22px rgba(255,212,0,.35), 6px 6px 0 var(--ink)}
-    .pow-bubble{display:none;position:absolute;top:-20px;left:50%;transform:translateX(-50%);background:var(--yellow);color:#000;border:4px solid var(--ink);border-radius:50%;padding:30px 20px;text-align:center;box-shadow:8px 8px 0 var(--ink);z-index:1000;width:300px;clip-path:polygon(50% 0%,60% 10%,100% 10%,70% 30%,90% 60%,60% 55%,50% 100%,40% 55%,10% 60%,30% 30%,0% 10%,40% 10%)}
-    .pow-bubble:after{content:"";position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);border-width:20px 15px 0;border-style:solid;border-color:var(--yellow) transparent transparent transparent;filter:drop-shadow(2px 2px 0 var(--ink))}
-    footer{background:#111;border-top:6px solid var(--ink);padding:30px 20px;text-align:center}
+  .pow-bubble {
+  display: none;
+  position: absolute;
+  top: 0;                 /* Align with top of image */
+  left: 0;                /* Align with left of image */
+  width: 100%;            /* Same width as hero image container */
+  height: 100%;           /* Same height as hero image container */
+  background: var(--yellow);
+  color: #000;
+  border: 4px solid var(--ink);
+  border-radius: 0;       /* Makes it a square */
+  box-shadow: none;       /* Remove comic shadow */
+  padding: 0;             /* Remove comic padding, adjust as needed */
+  text-align: center;
+  z-index: 10;            /* Make sure it's above the image */
+}
+
+.pow-bubble:after {
+  display: none;          /* Hide the comic bubble tail */
+} footer{background:#111;border-top:6px solid var(--ink);padding:30px 20px;text-align:center}
     footer a{margin:0 10px;color:var(--yellow);text-decoration:none;font-family:"Bangers",sans-serif}
     .back-to-top{position:fixed;bottom:20px;right:20px;z-index:1500;background:var(--yellow);color:#000;border:4px solid var(--ink);border-radius:50%;padding:28px 24px;font-family:"Bangers",sans-serif;font-size:26px;letter-spacing:1px;box-shadow:6px 6px 0 var(--ink);text-decoration:none;clip-path:polygon(50% 0%,65% 10%,100% 10%,75% 30%,95% 60%,65% 55%,50% 100%,35% 55%,5% 60%,25% 30%,0% 10%,35% 10%)}
     .back-to-top:hover{transform:scale(1.1) rotate(-3deg);background:var(--magenta);color:#fff}
