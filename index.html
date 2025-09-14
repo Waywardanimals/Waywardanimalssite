@@ -37,9 +37,7 @@
       font-family: 'Luckiest Guy', cursive, Arial, sans-serif;
       letter-spacing: 1px;
       text-align: center;
-      margin: 0.7em 0 0.35em 0;
-    }
-    h3, h4, .glow-h3, .glow-h4 {
+      margin: 3, .glow-h4 {
       font-family: 'Luckiest Guy', cursive, Arial, sans-serif;
       letter-spacing: 0.5px;
       text-align: center;
@@ -50,10 +48,10 @@
       font-size: 1.1rem;
       letter-spacing: 1px;
     }
-    /* Main white title with magenta glow */
+    /* Main white title with magenta glow, reduced size */
     .glow-h1 {
       color: #fff;
-      font-size: 4rem;
+      font-size: 2.8rem;
       text-shadow:
         0 0 8px var(--magenta),
         0 0 24px var(--magenta),
@@ -65,7 +63,7 @@
     /* Underdog Success Stories: like h1 but glows green */
     #stories .glow-h2 {
       color: #fff;
-      font-size: 4rem;
+      font-size: 2.8rem;
       text-shadow:
         0 0 8px var(--lime),
         0 0 24px var(--lime),
@@ -83,8 +81,9 @@
       margin: 0.7em 0 0.35em 0;
       text-align: center;
     }
-    /* Other h2: original styling */
-    .glow-h2 {
+    /* All other .glow-h2 default */
+    section:not(#stories):not(#adopt) .glow-h2,
+    footer .glow-h2 {
       color: #fff;
       font-size: 2.5rem;
       text-shadow:
@@ -182,7 +181,22 @@
         0 0 16px 4px #ff00c3,
         0 0 32px 8px #7c34ff,
         0 0 48px 16px #00ff84,
-        0 0 64px 2416px #ffe600,
+        0 0 64px 24px #ffe600;
+      animation: rainbow-glow 2s linear infinite;
+    }
+    @keyframes rainbow-glow {
+      0% {
+        box-shadow:
+          0 0 16px 4px #ff00c3,
+          0 0 32px 8px #7c34ff,
+          0 0 48px 16px #00ff84,
+          0 0 64px 24px #ffe600;
+      }
+      25% {
+        box-shadow:
+          0 0 16px 4px #7c34ff,
+          0 0 32px 8px #00ff84,
+          0 0 48px 16px #ffe600,
           0 0 64px 24px #ff00c3;
       }
       50% {
@@ -209,10 +223,10 @@
     }
     @media (max-width: 800px) {
       body { font-size: 16px; padding: 10px; }
-      h1, .glow-h1 { font-size: 2.5rem; }
-      h2, .glow-h2 { font-size: 2.2rem; }
-      h3, .glow-h3 { font-size: 2rem; }
-      h4, .glow-h4 { font-size: 1.25rem; }
+      h1, .glow-h1 { font-size: 2.2rem !important; }
+      h2, .glow-h2 { font-size: 2rem !important; }
+      h3, .glow-h3 { font-size: 1.4rem !important; }
+      h4, .glow-h4 { font-size: 1.1rem !important; }
       .btn-comic, .glow-tagline { font-size: 0.95rem; }
       p, li, .body-text { font-size: 1rem; }
       section { padding: 22px 6px; }
