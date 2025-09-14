@@ -62,6 +62,28 @@
       margin: 0.7em 0 0.35em 0;
       text-align: center;
     }
+    /* Underdog Success Stories: like h1 but glows green */
+    #stories .glow-h2 {
+      color: #fff;
+      font-size: 4rem;
+      text-shadow:
+        0 0 8px var(--lime),
+        0 0 24px var(--lime),
+        0 0 48px var(--lime);
+      letter-spacing: 1.5px;
+      margin: 0.7em 0 0.35em 0;
+      text-align: center;
+    }
+    /* Adoptable Sidekicks: flat yellow, slight white glow */
+    #adopt .glow-h2 {
+      color: var(--yellow);
+      font-size: 2.5rem;
+      text-shadow: 0 0 10px #fff;
+      letter-spacing: 1.5px;
+      margin: 0.7em 0 0.35em 0;
+      text-align: center;
+    }
+    /* Other h2: original styling */
     .glow-h2 {
       color: #fff;
       font-size: 2.5rem;
@@ -84,20 +106,19 @@
       margin: 0.5em 0 0.2em 0;
       text-align: center;
     }
-    /* Remove overrides for .glow-h3 in the stories section */
     .glow-h4 {
       color: #fff;
-      font-size: 3rem;
+      font-size: 20px;
       text-shadow:
         0 0 2px var(--lime),
         0 0 4px var(--yellow);
     }
     .glow-tagline {
       color: #fff;
-      font-size: 3rem;
+      font-size: 1.2rem;
       text-shadow:
-        0 0 4px var(--magenta),
-        0 0 6px var(--yellow);
+        0 0 8px var(--magenta),
+        0 0 18px var(--yellow);
       margin: 8px 0 18px 0;
       padding: 4px 16px;
       display: inline-block;
@@ -114,7 +135,7 @@
       margin-right: auto;
       text-align: left;
     }
-    /* BUTTONS */
+    /* BUTTONS: subtle white glow */
     .btn-comic {
       display: inline-block;
       padding: 16px 32px;
@@ -125,7 +146,7 @@
       font-weight: 800;
       letter-spacing: 1px;
       text-transform: uppercase;
-      box-shadow: 3px 3px 0 var(--ink);
+      box-shadow: 3px 3px 0 var(--ink), 0 0 8px #fff;
       cursor: pointer;
       transition: 
         transform 0.12s cubic-bezier(.4,2.5,.6,.8),
@@ -134,6 +155,11 @@
       outline: none;
       background: inherit;
       color: inherit;
+    }
+    .btn-comic:hover {
+      transform: scale(1.09) rotate(2deg) translateY(-2px);
+      z-index: 1;
+      box-shadow: 8px 8px 0 var(--ink), 0 0 16px #fff;
     }
     .btn-magenta { background: var(--magenta) !important; color: #fff !important; }
     .btn-yellow  { background: var(--yellow) !important; color: #222 !important; }
@@ -149,11 +175,6 @@
     .chaos-buttons .btn-comic:nth-child(5) { transform: rotate(-5deg) translateY(5px); }
     .chaos-buttons .btn-comic:nth-child(6) { transform: rotate(7deg) translateY(-3px); }
     .chaos-buttons .btn-comic:nth-child(7) { transform: rotate(-8deg) translateY(4px); }
-    .chaos-buttons .btn-comic:hover {
-      transform: scale(1.09) rotate(2deg) translateY(-2px);
-      z-index: 1;
-      box-shadow: 8px 8px 0 var(--ink);
-    }
     .rainbow-glow-btn {
       position: relative;
       z-index: 1;
@@ -161,22 +182,7 @@
         0 0 16px 4px #ff00c3,
         0 0 32px 8px #7c34ff,
         0 0 48px 16px #00ff84,
-        0 0 64px 24px #ffe600;
-      animation: rainbow-glow 2s linear infinite;
-    }
-    @keyframes rainbow-glow {
-      0% {
-        box-shadow:
-          0 0 16px 4px #ff00c3,
-          0 0 32px 8px #7c34ff,
-          0 0 48px 16px #00ff84,
-          0 0 64px 24px #ffe600;
-      }
-      25% {
-        box-shadow:
-          0 0 16px 4px #7c34ff,
-          0 0 32px 8px #00ff84,
-          0 0 48px 16px #ffe600,
+        0 0 64px 2416px #ffe600,
           0 0 64px 24px #ff00c3;
       }
       50% {
@@ -206,7 +212,7 @@
       h1, .glow-h1 { font-size: 2.5rem; }
       h2, .glow-h2 { font-size: 2.2rem; }
       h3, .glow-h3 { font-size: 2rem; }
-      h4, .glow-h4 { font-size: 0.95rem; }
+      h4, .glow-h4 { font-size: 1.25rem; }
       .btn-comic, .glow-tagline { font-size: 0.95rem; }
       p, li, .body-text { font-size: 1rem; }
       section { padding: 22px 6px; }
