@@ -27,6 +27,33 @@
   --magenta: #ff00c3;
   --purple: #7c34ff;
   --lime: #00ff84;
+<style>
+:root {
+  --ink: #222;
+  --yellow: #ffe600;
+  --magenta: #ff00c3;
+  --purple: #7c34ff;
+  --lime: #00ff84;
+}
+
+.purple {
+  background: var(--purple);
+  color: #fff !important;
+}
+
+.magenta {
+  background: var(--magenta);
+  color: #fff !important;
+}
+
+.yellow {
+  background: var(--yellow);
+  color: #000 !important;
+}
+
+.lime {
+  background: var(--lime);
+  color: #000 !important;
 }
     .comic-head{font-family:"Bangers",sans-serif}
    .btn-comic {
@@ -46,7 +73,6 @@
 
     section{position:relative;margin:40px auto;max-width:1200px;padding:40px 20px;border:6px solid var(--ink);box-shadow:12px 12px 0 var(--ink);background:#111;border-radius:18px}
     .glow-tag{font-family:"Bangers",sans-serif;font-size:28px;color:#fff;margin:4px 0 10px;padding:4px 12px;border:3px solid var(--ink);border-radius:12px;background:linear-gradient(90deg, rgba(25[...] 
-  .pow-bubble {
   display: none;
   position: absolute;
   top: 0;                 /* Align with center of image */
@@ -74,13 +100,13 @@
     /* Add glowing effect around the border */
     body {
   margin: 0;
-  padding: 10px;
+  padding: 30px;
   position: relative;
   font-family: "Raleway", sans-serif;
   background: #000;
   color: #fff;
   border: 10px solid var(--yellow);
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: 0 0 20px var(--yellow), 0 0 30px var(--magenta), 0 0 40px var(--purple);
 }
   </style>
