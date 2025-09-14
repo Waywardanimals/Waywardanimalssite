@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mayhem’s Home for Wayward Animals</title>
-  <!-- Comic & readable fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -53,8 +52,8 @@
       letter-spacing: 1px;
     }
     .glow-h1 {
-      color: var(--Yellow);
-      font-size: 3rem;/* 70px min */
+      color: var(--yellow);
+      font-size: 4.5rem; /* Bigger heading 1 */
       text-shadow:
         0 0 2px var(--yellow),
         0 0 6px var(--yellow),
@@ -62,7 +61,7 @@
     }
     .glow-h2 {
       color: #fff;
-      font-size: 3rem;   /* 40px min */
+      font-size: 2.5rem;
       text-shadow:
         0 0 4px var(--magenta),
         0 0 8px var(--purple),
@@ -71,27 +70,47 @@
       text-align: center;
     }
     .glow-h3 {
-      color: var(--lime);
-      font-size: 2.5rem; /* 40px */
-      text-shadow:
-        0 0 0px var(--magenta),
-        0 0 2px var(--yellow),
-        0 0 0px var(--purple);
+      font-size: 2.5rem;
       font-family: 'Luckiest Guy', cursive, Arial, sans-serif;
       letter-spacing: 0.5px;
       margin: 0.5em 0 0.2em 0;
       text-align: center;
+      /* Default, overridden below */
+      color: var(--lime);
+      text-shadow:
+        0 0 1px var(--magenta),
+        0 0 2px var(--yellow),
+        0 0 1px var(--purple);
+    }
+    /* Alternate story heading glows: magenta, lime, purple */
+    #stories h3.glow-h3:nth-of-type(1) {
+      color: var(--magenta);
+      text-shadow:
+        0 0 2px var(--magenta),
+        0 0 4px var(--yellow);
+    }
+    #stories h3.glow-h3:nth-of-type(2) {
+      color: var(--lime);
+      text-shadow:
+        0 0 2px var(--lime),
+        0 0 4px var(--yellow);
+    }
+    #stories h3.glow-h3:nth-of-type(3) {
+      color: var(--purple);
+      text-shadow:
+        0 0 2px var(--purple),
+        0 0 4px var(--yellow);
     }
     .glow-h4 {
       color: #fff;
-      font-size: 2rem;
+      font-size: 1.2rem;
       text-shadow:
-        0 0 4px var(--lime),
-        0 0 8px var(--yellow);
+        0 0 2px var(--lime),
+        0 0 4px var(--yellow);
     }
     .glow-tagline {
       color: #fff;
-      font-size: 2rem;
+      font-size: 1.2rem;
       text-shadow:
         0 0 8px var(--magenta),
         0 0 18px var(--yellow);
@@ -152,7 +171,6 @@
       z-index: 1;
       box-shadow: 8px 8px 0 var(--ink);
     }
-    /* Rainbow glow for subscribe button */
     .rainbow-glow-btn {
       position: relative;
       z-index: 1;
@@ -200,10 +218,9 @@
           0 0 64px 24px #ffe600;
       }
     }
-    /* Responsive scaling for mobile */
     @media (max-width: 800px) {
       body { font-size: 16px; padding: 10px; }
-      h1, .glow-h1 { font-size: 2rem; }
+      h1, .glow-h1 { font-size: 2.5rem; }
       h2, .glow-h2 { font-size: 2.2rem; }
       h3, .glow-h3 { font-size: 2rem; }
       h4, .glow-h4 { font-size: 0.95rem; }
@@ -212,7 +229,6 @@
       section { padding: 22px 6px; }
       #chief-container { flex-direction: column; align-items: center; }
     }
-    /* Layout */
     #chief-container {
       display: flex;
       gap: 32px;
@@ -236,7 +252,7 @@
 <body>
   <section id="hero">
     <h1 class="glow-h1">Welcome to Mayhem’s Home</h1>
-    <h2 class="glow-h3">Where chaos meets cuddles</h2>
+    <h3 class="glow-h3">Where chaos meets cuddles</h3>
     <p>
       We’re the last stop for the dogs who just can't decide if they're heroes or getting coal for Christmas; the unruly, the loud, the misunderstood. We rehabilitate them into <strong>sidekicks</strong>!
     </p>
@@ -259,11 +275,11 @@
   </section>
   <section id="stories">
     <h2 class="glow-h2">Underdog Success Stories</h2>
-    <h4><p>From chaos to cuddle-bugs: Meet the legends of Mayhem’s Home.</p></h4>
+    <p>From chaos to cuddle-bugs: Meet the legends of Mayhem’s Home.</p>
     <div style="margin-bottom:20px">
       <h3 class="glow-h3">Wiley -AKA- Land Whale</h3>
-      <h2 class="glow-h2">Featured in: the Mayhem Times</h2>
-      <p>Wiley was a gift for an elderly woman before the passing of her husband.  A precious last memory, she was permitted to do what every wild puppy would do when over loved and under disciplined. When she came to us, she was 60 pounds overweight and a true couch potato. Now, she’s down to a healthy weight and has a family to love her forever!</p>
+      <h4 class="glow-h4">Featured in: the Mayhem Times</h4>
+      <p>Wiley was a gift for an elderly woman before the passing of her husband. A precious last memory, she was permitted to do what every wild puppy would do when over loved and under disciplined. When she came to us, she was 60 pounds overweight and a true couch potato. Now, she’s down to a healthy weight and has a family to love her forever!</p>
     </div>
     <div style="margin-bottom:30px">
       <h3 class="glow-h3">Katie -AKA- Land Seal</h3>
@@ -288,7 +304,6 @@
     <div style="text-align:center;margin-top:16px">
       <a href="https://square.link/u/GCiL67uC?src=sheet" target="_blank" class="btn-comic btn-magenta">Save the City!</a>
     </div>
-    <!-- Monthly Subscription CTA -->
     <div style="text-align:center;margin-top:30px">
       <h3 class="glow-h3">💥 Join the Chaos &amp; Co League!</h3>
       <p>
