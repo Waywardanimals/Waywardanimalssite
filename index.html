@@ -62,7 +62,7 @@
     }
     .glow-h2 {
       color: #fff;
-      font-size: 2rem;
+      font-size: 2.5rem;   /* 40px min */
       text-shadow:
         0 0 4px var(--magenta),
         0 0 8px var(--purple),
@@ -74,9 +74,9 @@
       color: var(--magenta);
       font-size: 2.5rem; /* 40px */
       text-shadow:
-        0 0 4px var(--magenta),
-        0 0 8px var(--yellow),
-        0 0 10px var(--purple);
+        0 0 2px var(--magenta),
+        0 0 4px var(--yellow),
+        0 0 4px var(--purple);
       font-family: 'Luckiest Guy', cursive, Arial, sans-serif;
       letter-spacing: 0.5px;
       margin: 0.5em 0 0.2em 0;
@@ -124,7 +124,9 @@
       text-transform: uppercase;
       box-shadow: 3px 3px 0 var(--ink);
       cursor: pointer;
-      transition: transform 0.08s;
+      transition: 
+        transform 0.12s cubic-bezier(.4,2.5,.6,.8),
+        box-shadow 0.12s;
       text-decoration: none;
       outline: none;
       background: inherit;
@@ -134,9 +136,21 @@
     .btn-yellow  { background: var(--yellow) !important; color: #222 !important; }
     .btn-purple  { background: var(--purple) !important; color: #fff !important; }
     .btn-lime    { background: var(--lime) !important; color: #222 !important; }
-    .btn-comic:hover {
-      transform: scale(1.06) rotate(-2deg);
-      box-shadow: 6px 6px 0 var(--ink);
+    /* Chaotic button arrangement */
+    .chaos-buttons .btn-comic {
+      position: relative;
+    }
+    .chaos-buttons .btn-comic:nth-child(1) { transform: rotate(-6deg) translateY(-2px); }
+    .chaos-buttons .btn-comic:nth-child(2) { transform: rotate(4deg) translateY(3px); }
+    .chaos-buttons .btn-comic:nth-child(3) { transform: rotate(-3deg) translateY(-4px); }
+    .chaos-buttons .btn-comic:nth-child(4) { transform: rotate(5deg) translateY(2px); }
+    .chaos-buttons .btn-comic:nth-child(5) { transform: rotate(-5deg) translateY(5px); }
+    .chaos-buttons .btn-comic:nth-child(6) { transform: rotate(7deg) translateY(-3px); }
+    .chaos-buttons .btn-comic:nth-child(7) { transform: rotate(-8deg) translateY(4px); }
+    .chaos-buttons .btn-comic:hover {
+      transform: scale(1.09) rotate(2deg) translateY(-2px);
+      z-index: 1;
+      box-shadow: 8px 8px 0 var(--ink);
     }
     /* Rainbow glow for subscribe button */
     .rainbow-glow-btn {
@@ -190,8 +204,8 @@
     @media (max-width: 800px) {
       body { font-size: 16px; padding: 10px; }
       h1, .glow-h1 { font-size: 2rem; }
-      h2, .glow-h2 { font-size: 1.3rem; }
-      h3, .glow-h3 { font-size: 2rem; } /* 32px */
+      h2, .glow-h2 { font-size: 2.2rem; }
+      h3, .glow-h3 { font-size: 2rem; }
       h4, .glow-h4 { font-size: 0.95rem; }
       .btn-comic, .glow-tagline { font-size: 0.95rem; }
       p, li, .body-text { font-size: 1rem; }
@@ -231,7 +245,7 @@
         style="width:350px; border:6px solid var(--ink); border-radius:18px; box-shadow:20px 20px 0 var(--ink); max-width:100%;">
       <div>
         <h2 class="glow-h2">Choose your Chaos:</h2>
-        <div id="chief-menu" style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; flex-direction: row; justify-content:center;">
+        <div id="chief-menu" class="chaos-buttons" style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; flex-direction: row; justify-content:center;">
           <a href="#adopt" class="btn-comic btn-magenta">Available Sidekicks</a>
           <a href="https://square.link/u/GCiL67uC?src=sheet" target="_blank" class="btn-comic btn-yellow">Fuel the Mayhem</a>
           <a href="https://chaoscompany2009.myshopify.com" target="_blank" class="btn-comic btn-purple">Chaos League Merch</a>
@@ -313,7 +327,7 @@
     <a href="https://facebook.com/YOURPAGE" target="_blank">Facebook</a>
     <a href="https://instagram.com/YOURPAGE" target="_blank">Instagram</a>
     <a href="https://tiktok.com/@YOURPAGE" target="_blank">TikTok</a>
-    <p style="margin-top:20px;color:#777;font-size:1.2rem">© <script>document.write(new Date().getFullYear());</script> Mayhem’s Home • 501(c)(3) eligible</p>
+    <p style="margin-top:20px;color:#777;font-size:1rem">© <script>document.write(new Date().getFullYear());</script> Mayhem’s Home • 501(c)(3) eligible</p>
   </footer>
   <a href="#contact" id="contactBubble" class="contact-bubble">CONTACT</a>
   <div id="contactPanel" class="contact-panel"></div>
