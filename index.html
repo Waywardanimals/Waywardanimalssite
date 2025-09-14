@@ -38,6 +38,55 @@
     0 0 32px var(--yellow);
 }
 
+/* Rainbow glow for subscribe button */
+.rainbow-glow-btn {
+  position: relative;
+  z-index: 1;
+  box-shadow:
+    0 0 16px 4px #ff00c3,
+    0 0 32px 8px #7c34ff,
+    0 0 48px 16px #00ff84,
+    0 0 64px 24px #ffe600;
+  animation: rainbow-glow 2s linear infinite;
+}
+@keyframes rainbow-glow {
+  0% {
+    box-shadow:
+      0 0 16px 4px #ff00c3,
+      0 0 32px 8px #7c34ff,
+      0 0 48px 16px #00ff84,
+      0 0 64px 24px #ffe600;
+  }
+  25% {
+    box-shadow:
+      0 0 16px 4px #7c34ff,
+      0 0 32px 8px #00ff84,
+      0 0 48px 16px #ffe600,
+      0 0 64px 24px #ff00c3;
+  }
+  50% {
+    box-shadow:
+      0 0 16px 4px #00ff84,
+      0 0 32px 8px #ffe600,
+      0 0 48px 16px #ff00c3,
+      0 0 64px 24px #7c34ff;
+  }
+  75% {
+    box-shadow:
+      0 0 16px 4px #ffe600,
+      0 0 32px 8px #ff00c3,
+      0 0 48px 16px #7c34ff,
+      0 0 64px 24px #00ff84;
+  }
+  100% {
+    box-shadow:
+      0 0 16px 4px #ff00c3,
+      0 0 32px 8px #7c34ff,
+      0 0 48px 16px #00ff84,
+      0 0 64px 24px #ffe600;
+  }
+}
+
 /* Button styles and rest of your site CSS below */
 .purple { background: var(--purple); color: #fff !important; }
 .magenta { background: var(--magenta); color: #fff !important; }
@@ -64,53 +113,8 @@
   transform: scale(1.06) rotate(-2deg);
   box-shadow: 6px 6px 0 var(--ink);
 }
-.glow-btn-multi {
-  box-shadow:
-    0 0 16px 6px var(--magenta),
-    0 0 32px 12px var(--purple),
-    0 0 48px 18px var(--lime),
-    0 0 64px 24px var(--yellow);
-  animation: glow-cycle 2s infinite linear;
-}
-@keyframes glow-cycle {
-  0% {
-    box-shadow:
-      0 0 16px 6px var(--magenta),
-      0 0 32px 12px var(--purple),
-      0 0 48px 18px var(--lime),
-      0 0 64px 24px var(--yellow);
-  }
-  25% {
-    box-shadow:
-      0 0 16px 6px var(--purple),
-      0 0 32px 12px var(--lime),
-      0 0 48px 18px var(--yellow),
-      0 0 64px 24px var(--magenta);
-  }
-  50% {
-    box-shadow:
-      0 0 16px 6px var(--lime),
-      0 0 32px 12px var(--yellow),
-      0 0 48px 18px var(--magenta),
-      0 0 64px 24px var(--purple);
-  }
-  75% {
-    box-shadow:
-      0 0 16px 6px var(--yellow),
-      0 0 32px 12px var(--magenta),
-      0purple),
-      0 0 64px 24px var(--lime);
-  }
-  100% {
-    box-shadow:
-      0 0 16px 6px var(--magenta),
-      0 0 32px 12px var(--purple),
-      0 0 48px 18px var(--lime),
-      0 0 64px 24px var(--yellow);
-  }
-}
 
-/* Layout for hero section */
+/* Hero section responsive layout */
 #chief-container {
   display: flex;
   gap: 32px;
@@ -149,6 +153,71 @@ section {
   border-radius: 18px;
 }
 .comic-head { font-family: "Bangers", sans-serif; }
+.glow-tag {
+  font-family: "Bangers", sans-serif;
+  font-size: 28px;
+  color: #fff;
+  margin: 4px 0 10px;
+  padding: 4px 12px;
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(255,230,0,0.11) 0%, rgba(255,0,195,0.15) 100%);
+  text-shadow: 0 0 12px var(--yellow), 0 0 18px var(--magenta);
+}
+footer {
+  background: #111;
+  border-top: 6px solid var(--ink);
+  padding: 20px 20px;
+  text-align: center;
+}
+footer a {
+  margin: 0 10px;
+  color: var(--yellow);
+  text-decoration: none;
+  font-family: "Bangers", sans-serif;
+}
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1500;
+  background: var(--yellow);
+  color: #fff;
+  border: 4px solid var(--ink);
+  border-radius: 50%;
+  padding: 28px 24px;
+  font-family: "Bangers", sans-serif;
+}
+.back-to-top:hover {
+  transform: scale(1.1) rotate(-3deg);
+  background: var(--magenta);
+  color: #fff;
+}
+.contact-bubble {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1500;
+  background: var(--yellow);
+  color: #fff;
+  border: 4px solid var(--ink);
+  border-radius: 50%;
+  padding: 18px 16px;
+  font-family: "Bangers", sans-serif;
+}
+.contact-panel {
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  left: 20px;
+  z-index: 1501;
+  background: #fff;
+  color: #fff;
+  border: 4px solid var(--ink);
+  border-radius: 18px;
+  box-shadow: 8px 8px 0 var(--ink);
+  padding: 20px;
+}
   </style>
 </head>
 <body>
@@ -159,7 +228,7 @@ section {
       We’re the last stop for the dogs who just can't decide if they're heros or getting coal for Christmas; the unruly, the loud, the misunderstood. We rehabilitate them into <strong>sidekicks</strong>!
     </p>
     <div id="chief-container">
-      <img id="heroImg" src="assets/Hero alt="Chief Mayhem Navigator"
+      <img id="heroImg" src="assets/Hero.png" alt="Chief Mayhem Navigator"
         style="width:350px; border:6px solid var(--ink); border-radius:18px; box-shadow:20px 20px 0 var(--ink);">
       <div>
         <p class="comic-head glow-h2" style="font-size:40px;margin:0 0 20px">Choose your Chaos:</p>
@@ -168,7 +237,8 @@ section {
           <a href="https://square.link/u/GCiL67uC?src=sheet" target="_blank" class="btn-comic magenta">Fuel the Mayhem</a>
           <a href="https://chaoscompany2009.myshopify.com" target="_blank" class="btn-comic purple">Chaos League Merch</a>
           <a href="about.html" class="btn-comic lime">Chaos Taming 101</a>
-          <">Controlled Chaos Services</a>
+          <a href="stories.html" class="btn-comic purple">Underdog Success Stories</a>
+          <a href="services.html" class="btn-comic yellow">Controlled Chaos Services</a>
           <a href="blog.html" class="btn-comic magenta">Chaos &amp; Cuddles Blog</a>
         </div>
       </div>
@@ -195,7 +265,10 @@ section {
     <p style="text-align:center;max-width:800px;margin:0 auto 50px;color:#ddd">
       Madame Gatekeeper is at it again!!!
       <span style="color:#fff;">
-      Keeping well-meaning families from accessing affordable spay &amp; neuter services so they can be responsible pet parents. The cycle of pet overpopulation is threatening to drown the city. Can you help us raise $10;box-shadow:8px 8px 0 var(--ink);padding:20px;max-width:600px;margin:0 auto">
+      Keeping well-meaning families from accessing affordable spay &amp; neuter services so they can be responsible pet parents. The cycle of pet overpopulation is threatening to drown the city. Can you help us raise $10,000 for low-income spay/neuter — survivors and struggling families keep their pets, while we curb overpopulation... Rise with us, citizens! We’re at $2,000 so far!
+      </span>
+    </p>
+    <div style="background:#222;border:4px solid var(--ink);border-radius:18px;box-shadow:8px 8px 0 var(--ink);padding:20px;max-width:600px;margin:0 auto">
       <div style="background:var(--magenta);height:24px;width:20%;border-radius:12px"></div>
     </div>
     <div style="text-align:center;margin-top:16px">
@@ -211,7 +284,7 @@ section {
         exclusive <strong>10% merch discount</strong> sent to you by email as a subscriber benefit.
       </p>
       <a href="https://checkout.square.site/merchant/ML3P53GMV910M/checkout/6OCEZCMDXKLHS52CC2VM5Y3T"
-         target="_blank" class="btn-comic lime glow-btn-multi" id="btnSubscribe">Subscribe – $10/month</a>
+         target="_blank" class="btn-comic lime rainbow-glow-btn" id="btnSubscribe">Subscribe – $10/month</a>
       <p style="margin-top:10px;color:#aaa;font-size:23px">
         Discount codes are delivered to active subscribers via email. Subscibers get early access to exclusive content.
       </p>
