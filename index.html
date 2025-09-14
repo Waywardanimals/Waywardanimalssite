@@ -37,7 +37,9 @@
       font-family: 'Luckiest Guy', cursive, Arial, sans-serif;
       letter-spacing: 1px;
       text-align: center;
-      margin: 3, .glow-h4 {
+      margin: 0.7em 0 0.35em 0;
+    }
+    h3, h4, .glow-h3, .glow-h4 {
       font-family: 'Luckiest Guy', cursive, Arial, sans-serif;
       letter-spacing: 0.5px;
       text-align: center;
@@ -48,7 +50,7 @@
       font-size: 1.1rem;
       letter-spacing: 1px;
     }
-    /* Main white title with magenta glow, reduced size */
+    /* Main title: magenta glow */
     .glow-h1 {
       color: #fff;
       font-size: 2.8rem;
@@ -60,7 +62,7 @@
       margin: 0.7em 0 0.35em 0;
       text-align: center;
     }
-    /* Underdog Success Stories: like h1 but glows green */
+    /* Underdog Success Stories: green glow */
     #stories .glow-h2 {
       color: #fff;
       font-size: 2.8rem;
@@ -72,7 +74,7 @@
       margin: 0.7em 0 0.35em 0;
       text-align: center;
     }
-    /* Adoptable Sidekicks: flat yellow, slight white glow */
+    /* Adoptable Sidekicks: yellow + white glow */
     #adopt .glow-h2 {
       color: var(--yellow);
       font-size: 2.5rem;
@@ -81,7 +83,7 @@
       margin: 0.7em 0 0.35em 0;
       text-align: center;
     }
-    /* All other .glow-h2 default */
+    /* All other .glow-h2 default style */
     section:not(#stories):not(#adopt) .glow-h2,
     footer .glow-h2 {
       color: #fff;
@@ -93,7 +95,6 @@
       display: block;
       text-align: center;
     }
-    /* Dog names in stories: white with magenta glow like .glow-h1 */
     .glow-h3 {
       color: #fff;
       font-size: 2.5rem;
@@ -134,7 +135,6 @@
       margin-right: auto;
       text-align: left;
     }
-    /* BUTTONS: subtle white glow */
     .btn-comic {
       display: inline-block;
       padding: 16px 32px;
@@ -164,9 +164,7 @@
     .btn-yellow  { background: var(--yellow) !important; color: #222 !important; }
     .btn-purple  { background: var(--purple) !important; color: #fff !important; }
     .btn-lime    { background: var(--lime) !important; color: #222 !important; }
-    .chaos-buttons .btn-comic {
-      position: relative;
-    }
+    .chaos-buttons .btn-comic { position: relative; }
     .chaos-buttons .btn-comic:nth-child(1) { transform: rotate(-6deg) translateY(-2px); }
     .chaos-buttons .btn-comic:nth-child(2) { transform: rotate(4deg) translateY(3px); }
     .chaos-buttons .btn-comic:nth-child(3) { transform: rotate(-3deg) translateY(-4px); }
@@ -223,10 +221,10 @@
     }
     @media (max-width: 800px) {
       body { font-size: 16px; padding: 10px; }
-      h1, .glow-h1 { font-size: 2.2rem !important; }
-      h2, .glow-h2 { font-size: 2rem !important; }
-      h3, .glow-h3 { font-size: 1.4rem !important; }
-      h4, .glow-h4 { font-size: 1.1rem !important; }
+      h1, .glow-h1 { font-size: 2.2rem; }
+      h2, .glow-h2 { font-size: 2rem; }
+      h3, .glow-h3 { font-size: 1.4rem; }
+      h4, .glow-h4 { font-size: 1.1rem; }
       .btn-comic, .glow-tagline { font-size: 0.95rem; }
       p, li, .body-text { font-size: 1rem; }
       section { padding: 22px 6px; }
@@ -234,24 +232,7 @@
     }
     #chief-container {
       display: flex;
-      gap: 32px;
-      align-items: flex-start;
-      flex-wrap: wrap;
-    }
-    footer {
-      background: #111;
-      border-top: 6px solid var(--ink);
-      padding: 20px 20px;
-      text-align: center;
-    }
-    footer a {
-      margin: 0 10px;
-      color: var(--yellow);
-      text-decoration: none;
-      font-family: 'Bangers', cursive;
-    }
-  </style>
-</head>
+      gap: 32>
 <body>
   <section id="hero">
     <h1 class="glow-h1">Welcome to Mayhem’s Home</h1>
