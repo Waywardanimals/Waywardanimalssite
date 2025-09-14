@@ -50,18 +50,17 @@
       font-size: 1.1rem;
       letter-spacing: 1px;
     }
+    /* Main white title with magenta glow */
     .glow-h1 {
-  font-family: 'Luckiest Guy', cursive, Arial, sans-serif;
-  color: #fff;
-  font-size: 4rem; /* 64px, 60px minimum */
-  text-shadow:
-    0 0 8px var(--magenta),
-    0 0 24px var(--magenta),
-    0 0 48px var(--magenta);
-  letter-spacing: 1.5px;
-  margin: 0.7em 0 0.35em 0;
-  text-align: center;
-}
+      color: #fff;
+      font-size: 4rem;
+      text-shadow:
+        0 0 8px var(--magenta),
+        0 0 24px var(--magenta),
+        0 0 48px var(--magenta);
+      letter-spacing: 1.5px;
+      margin: 0.7em 0 0.35em 0;
+      text-align: center;
     }
     .glow-h2 {
       color: #fff;
@@ -73,37 +72,19 @@
       display: block;
       text-align: center;
     }
+    /* Dog names in stories: white with magenta glow like .glow-h1 */
     .glow-h3 {
+      color: #fff;
       font-size: 2.5rem;
-      font-family: 'Luckiest Guy', cursive, Arial, sans-serif;
-      letter-spacing: 0.5px;
+      text-shadow:
+        0 0 8px var(--magenta),
+        0 0 24px var(--magenta),
+        0 0 48px var(--magenta);
+      letter-spacing: 1.5px;
       margin: 0.5em 0 0.2em 0;
       text-align: center;
-      color: var(--lime);
-      text-shadow:
-        0 0 1px var(--magenta),
-        0 0 2px var(--yellow),
-        0 0 1px var(--purple);
     }
-    /* Alternate story heading glows: magenta, lime, purple */
-    #stories h3.glow-h3:nth-of-type(1) {
-      color: var(--magenta);
-      text-shadow:
-        0 0 2px var(--magenta),
-        0 0 4px var(--yellow);
-    }
-    #stories h3.glow-h3:nth-of-type(2) {
-      color: var(--lime);
-      text-shadow:
-        0 0 2px var(--lime),
-        0 0 4px var(--yellow);
-    }
-    #stories h3.glow-h3:nth-of-type(3) {
-      color: var(--purple);
-      text-shadow:
-        0 0 2px var(--purple),
-        0 0 4px var(--yellow);
-    }
+    /* Remove overrides for .glow-h3 in the stories section */
     .glow-h4 {
       color: #fff;
       font-size: 1.2rem;
@@ -158,7 +139,6 @@
     .btn-yellow  { background: var(--yellow) !important; color: #222 !important; }
     .btn-purple  { background: var(--purple) !important; color: #fff !important; }
     .btn-lime    { background: var(--lime) !important; color: #222 !important; }
-    /* Chaotic button arrangement */
     .chaos-buttons .btn-comic {
       position: relative;
     }
@@ -280,24 +260,24 @@
     <h2 class="glow-h2">Underdog Success Stories</h2>
     <p>From chaos to cuddle-bugs: Meet the legends of Mayhem’s Home.</p>
     <div style="margin-bottom:20px">
-      <h1 class="glow-h1">Wiley -AKA- Land Whale</h1>
+      <h3 class="glow-h3">Wiley -AKA- Land Whale</h3>
       <h4 class="glow-h4">Featured in: the Mayhem Times</h4>
       <p>Wiley was a gift for an elderly woman before the passing of her husband. A precious last memory, she was permitted to do what every wild puppy would do when over loved and under disciplined. When she came to us, she was 60 pounds overweight and a true couch potato. Now, she’s down to a healthy weight and has a family to love her forever!</p>
     </div>
     <div style="margin-bottom:30px">
-      <h1 class="glow-h1">Katie -AKA- Land Seal</h1>
+      <h3 class="glow-h3">Katie -AKA- Land Seal</h3>
       <h4 class="glow-h4">Adopted! Congratulations to her new family</h4>
       <p>Katie came from a family threatened with citations over her howl. Her voice was that of villains' dreams; she could level a nervous system with one seal-like wail from her oversized snout. Now, she’s known for her gentle cuddles and has a home at last.</p>
     </div>
     <div>
-      <h1 class="glow-h1">Alder & Douglas -AKA- The Spider Twins</h1>
+      <h3 class="glow-h3">Alder & Douglas -AKA- The Spider Twins</h3>
       <h4 class="glow-h4">Still looking for their superhero assignment</h4>
       <p>The wall-climbing roof dwellers. Counter-surfing, hole digging, couch squatters... the both of 'em! Almost straight 2 years of chaos, until they decided to mellow into good boys, almost. Could your home be their next adventure?</p>
     </div>
   </section>
   <section id="fund">
     <h2 class="glow-h2">Save the City From Drowning in Pets</h2>
-    <h1 class="glow-h4">Madame Gatekeeper is at it again!!!</h1>
+    <h3 class="glow-h3">Madame Gatekeeper is at it again!!!</h3>
     <p>
       Keeping well-meaning families from accessing affordable spay &amp; neuter services so they can be responsible pet parents. The cycle of pet overpopulation is threatening to drown the city. Help us break the cycle!
     </p>
