@@ -1,25 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mayhem’s Home for Wayward Animals</title>
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KN8B9DCD');
-  </script>
-  <!-- End Google Tag Manager -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&family=Raleway:wght@400;600;800&display=swap" rel="stylesheet">
-
   <style>
 :root {
   --ink: #222;
@@ -29,26 +16,29 @@
   --lime: #00ff84;
 }
 
-html {
-  background: #000 !important;
+/* Glow effect levels */
+.glow-h1 {
+  text-shadow:
+    0 0 2px var(--purple),
+    0 0 4px var(--yellow),
+    0 0 6px var(--magenta);
+}
+.glow-h2 {
+  text-shadow:
+    0 0 6px var(--yellow),
+    0 0 12px var(--magenta),
+    0 0 16px var(--purple),
+    0 0 10px var(--lime);
+}
+.glow-h3 {
+  text-shadow:
+    0 0 10px var(--magenta),
+    0 0 18px var(--purple),
+    0 0 24px var(--lime),
+    0 0 32px var(--yellow);
 }
 
-body {
-  margin: 0;
-  padding: 30px;
-  min-height: 100vh;
-  position: relative;
-  font-family: "Raleway", sans-serif;
-  background: #000;
-  color: #fff;
-  border: 10px solid var(--yellow);
-  border-radius: 20px;
-  box-shadow: 0 0 40px 10px var(--yellow),
-              0 0 80px 20px var(--magenta),
-              0 0 120px 30px var(--purple);
-}
-
-/* Button styles */
+/* Button styles and rest of your site CSS below */
 .purple { background: var(--purple); color: #fff !important; }
 .magenta { background: var(--magenta); color: #fff !important; }
 .yellow { background: var(--yellow); color: #fff !important; }
@@ -74,8 +64,6 @@ body {
   transform: scale(1.06) rotate(-2deg);
   box-shadow: 6px 6px 0 var(--ink);
 }
-
-/* Glowing multi-color subscription button */
 .glow-btn-multi {
   box-shadow:
     0 0 16px 6px var(--magenta),
@@ -110,7 +98,7 @@ body {
     box-shadow:
       0 0 16px 6px var(--yellow),
       0 0 32px 12px var(--magenta),
-      0 0 48px 18px var(--purple),
+      0purple),
       0 0 64px 24px var(--lime);
   }
   100% {
@@ -122,55 +110,34 @@ body {
   }
 }
 
-/* Glowing subtitles/headings */
-.glow-sub-alt {
-  text-shadow:
-    0 0 8px var(--magenta),
-    0 0 12px var(--purple),
-    0 0 16px var(--lime),
-    0 0 20px var(--yellow);
-  animation: subtitle-glow-cycle 3s infinite linear;
+/* Layout for hero section */
+#chief-container {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
 }
-@keyframes subtitle-glow-cycle {
-  0% {
-    text-shadow:
-      0 0 8px var(--magenta),
-      0 0 12px var(--purple),
-      0 0 16px var(--lime),
-      0 0 20px var(--yellow);
-  }
-  25% {
-    text-shadow:
-      0 0 8px var(--purple),
-      0 0 12px var(--lime),
-      0 0 16px var(--yellow),
-      0 0 20px var(--magenta);
-  }
-  50% {
-    text-shadow:
-      0 0 8px var(--lime),
-      0 0 12px var(--yellow),
-      0 0 16px var(--magenta),
-      0 0 20px var(--purple);
-  }
-  75% {
-    text-shadow:
-      0 0 8px var(--yellow),
-      0 0 12px var(--magenta),
-      0 0 16px var(--purple),
-      0 0 20px var(--lime);
-  }
-  100% {
-    text-shadow:
-      0 0 8px var(--magenta),
-      0 0 12px var(--purple),
-      0 0 16px var(--lime),
-      0 0 20px var(--yellow);
+@media (max-width: 800px) {
+  #chief-container {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
-/* Headings and sections */
-.comic-head { font-family: "Bangers", sans-serif; }
+/* Sample body/site styles */
+body {
+  margin: 0;
+  padding: 30px;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Raleway", sans-serif;
+  background: #000;
+  color: #fff;
+  border: 10px solid var(--yellow);
+  border-radius: 20px;
+  box-shadow: 0 0 40px 10px var(--yellow),
+              0 0 80px 20px var(--magenta),
+              0 0 120px 30px var(--purple);
+}
 section {
   position: relative;
   margin: 40px auto;
@@ -181,135 +148,54 @@ section {
   background: #111;
   border-radius: 18px;
 }
-
-/* Glow tag for special text */
-.glow-tag {
-  font-family: "Bangers", sans-serif;
-  font-size: 28px;
-  color: #fff;
-  margin: 4px 0 10px;
-  padding: 4px 12px;
-  border: 3px solid var(--ink);
-  border-radius: 12px;
-  background: linear-gradient(90deg, rgba(255,230,0,0.11) 0%, rgba(255,0,195,0.15) 100%);
-  text-shadow: 0 0 12px var(--yellow), 0 0 18px var(--magenta);
-}
-
-/* Footer and other UI */
-footer {
-  background: #111;
-  border-top: 6px solid var(--ink);
-  padding: 20px 20px;
-  text-align: center;
-}
-footer a {
-  margin: 0 10px;
-  color: var(--yellow);
-  text-decoration: none;
-  font-family: "Bangers", sans-serif;
-}
-.back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1500;
-  background: var(--yellow);
-  color: #fff;
-  border: 4px solid var(--ink);
-  border-radius: 50%;
-  padding: 28px 24px;
-  font-family: "Bangers", sans-serif;
-}
-.back-to-top:hover {
-  transform: scale(1.1) rotate(-3deg);
-  background: var(--magenta);
-  color: #fff;
-}
-.contact-bubble {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  z-index: 1500;
-  background: var(--yellow);
-  color: #fff;
-  border: 4px solid var(--ink);
-  border-radius: 50%;
-  padding: 18px 16px;
-  font-family: "Bangers", sans-serif;
-}
-.contact-panel {
-  display: none;
-  position: fixed;
-  bottom: 90px;
-  left: 20px;
-  z-index: 1501;
-  background: #fff;
-  color: #fff;
-  border: 4px solid var(--ink);
-  border-radius: 18px;
-  box-shadow: 8px 8px 0 var(--ink);
-  padding: 20px;
-}
+.comic-head { font-family: "Bangers", sans-serif; }
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN8B9DCD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <!-- HERO -->
   <section id="hero">
-    <h1 class="comic-head glow-sub-alt" style="font-size:56px;color:var(--yellow);margin:0 0 6px">Welcome to Mayhem’s Home</h1>
+    <h1 class="comic-head glow-h1" style="font-size:56px;color:var(--yellow);margin:0 0 6px">Welcome to Mayhem’s Home</h1>
     <div class="glow-tag">Where chaos meets cuddles</div>
     <p style="max-width:820px;margin:0 auto 20px;font-size:25px;color:#fff;line-height:1.6">
       We’re the last stop for the dogs who just can't decide if they're heros or getting coal for Christmas; the unruly, the loud, the misunderstood. We rehabilitate them into <strong>sidekicks</strong>!
     </p>
-    <div id="chief-container" style="display: flex; gap: 32px; align-items: flex-start;">
-      <img id="heroImg" src="assets/Hero.png" alt="Chief Mayhem Navigator"
+    <div id="chief-container">
+      <img id="heroImg" src="assets/Hero alt="Chief Mayhem Navigator"
         style="width:350px; border:6px solid var(--ink); border-radius:18px; box-shadow:20px 20px 0 var(--ink);">
       <div>
-        <p class="comic-head glow-sub-alt" style="font-size:40px;margin:0 0 20px">Choose your Chaos:</p>
+        <p class="comic-head glow-h2" style="font-size:40px;margin:0 0 20px">Choose your Chaos:</p>
         <div id="chief-menu" style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; flex-direction: row;">
           <a href="#adopt" class="btn-comic purple">Available Sidekicks</a>
           <a href="https://square.link/u/GCiL67uC?src=sheet" target="_blank" class="btn-comic magenta">Fuel the Mayhem</a>
           <a href="https://chaoscompany2009.myshopify.com" target="_blank" class="btn-comic purple">Chaos League Merch</a>
           <a href="about.html" class="btn-comic lime">Chaos Taming 101</a>
-          <a href="stories.html" class="btn-comic purple">Underdog Success Stories</a>
-          <a href="services.html" class="btn-comic yellow">Controlled Chaos Services</a>
+          <">Controlled Chaos Services</a>
           <a href="blog.html" class="btn-comic magenta">Chaos &amp; Cuddles Blog</a>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Underdog SUCCESS Stories -->
   <section id="stories">
-    <h2 class="comic-head glow-sub-alt" style="color:var(--yellow);font-size:70px;text-align:center">Underdog Success Stories</h2>
+    <h2 class="comic-head glow-h2" style="color:var(--yellow);font-size:70px;text-align:center">Underdog Success Stories</h2>
     <p style="text-align:center;max-width:800px;margin:0 auto 50px;color:#fff">From chaos to cuddle-bugs: Meet the legends of Mayhem’s Home.</p>
     <div style="margin-bottom:20px">
-      <h3 class="comic-head glow-sub-alt" style="color:var(--magenta)">Wiley -AKA- Land Whale</h3>
+      <h3 class="comic-head glow-h3" style="color:var(--magenta)">Wiley -AKA- Land Whale</h3>
       <p style="color:#fff;">Wiley was a gift for an elderly woman before the passing of her husband.  A precious last memory, she was permitted to do what every wild puppy would do when over loved and under diciplined, bounced around and cause chaos. When her handler was injured , her behavior had to go. Enter, Mayhem's Home pilot training program.  We took in Wiley, worked with her and trained her to be a settled, focused, family member in belief that she's be going home in a few weeks. When her handler passed away unexpectedly, Wiley became an ESA for one of our volunteers. She grew from an unruly lab puppy into a calming sidekick.</p>
     </div>
     <div style="margin-bottom:30px">
-      <h3 class="comic-head glow-sub-alt" style="color:var(--magenta)">Katie -AKA- Land Seal</h3>
+      <h3 class="comic-head glow-h3" style="color:var(--magenta)">Katie -AKA- Land Seal</h3>
       <p style="color:#fff;">Katie came from a family threatened with citations over her howl. Her voice was that of villains dreams, she could level a nervous system with one seal like wail from her oversized snout. While in training, she was connected to a new handler. Her handler, a survivor finding her way after trauma, took her in. However, in a surprise twist Katie gave birth to eight pups after swearing she was spayed years ago. Katie is a liar! Two of her pups —the Spider Twins: Alder and Douglas—stayed on here for training and assignments.</p>
     </div>
     <div>
-      <h3 class="comic-head glow-sub-alt" style="color:var(--magenta)">Alder & Douglas -AKA- The Spider Twins</h3>
+      <h3 class="comic-head glow-h3" style="color:var(--magenta)">Alder & Douglas -AKA- The Spider Twins</h3>
       <p style="color:#fff;">The wall-climbing roof dwellers. Counter-surfing, hole digging, couch squatters... the both of 'em! Almost straight 2 years of chaos, until they decided to mellow into good boys, almost.... (garbage theft is the latest antics!). Late blooming nuisances reluctantly turned into sidekicks waiting for assignment.</p>
     </div>
   </section>
-
-  <!-- FUNDRAISER + SUBSCRIPTION -->
   <section id="fund">
-    <h2 class="comic-head glow-sub-alt" style="color:var(--yellow);font-size:40px;text-align:center">Save the City From Drowning in Pets</h2>
+    <h2 class="comic-head glow-h2" style="color:var(--yellow);font-size:40px;text-align:center">Save the City From Drowning in Pets</h2>
     <p style="text-align:center;max-width:800px;margin:0 auto 50px;color:#ddd">
       Madame Gatekeeper is at it again!!!
       <span style="color:#fff;">
-      Keeping well-meaning families from accessing affordable spay &amp; neuter services so they can be responsible pet parents. The cycle of pet overpopulation is threatening to drown the city. Can you help us raise $10,000 for low-income spay/neuter — survivors and struggling families keep their pets, while we curb overpopulation... Rise with us, citizens! We’re at $2,000 so far!
-      </span>
-    </p>
-    <div style="background:#222;border:4px solid var(--ink);border-radius:18px;box-shadow:8px 8px 0 var(--ink);padding:20px;max-width:600px;margin:0 auto">
+      Keeping well-meaning families from accessing affordable spay &amp; neuter services so they can be responsible pet parents. The cycle of pet overpopulation is threatening to drown the city. Can you help us raise $10;box-shadow:8px 8px 0 var(--ink);padding:20px;max-width:600px;margin:0 auto">
       <div style="background:var(--magenta);height:24px;width:20%;border-radius:12px"></div>
     </div>
     <div style="text-align:center;margin-top:16px">
@@ -317,7 +203,7 @@ footer a {
     </div>
     <!-- Monthly Subscription CTA -->
     <div style="text-align:center;margin-top:30px">
-      <h3 class="comic-head glow-sub-alt" style="color:var(--lime);font-size:50px;margin:0 0 10px">
+      <h3 class="comic-head glow-h3" style="color:var(--lime);font-size:50px;margin:0 0 10px">
         💥 Join the Chaos &amp; Co League!
       </h3>
       <p style="color:#fff;max-width:760px;margin:0 auto 20px">
@@ -334,10 +220,9 @@ footer a {
       </p>
     </div>
   </section>
-  
   <section id="adopt">
-    <h3 class="comic-head glow-sub-alt" style="color:var(--lime);font-size:40px;text-align:center">Fight rising unemployment! Put a sidekick to work!</h3>
-    <h2 class="comic-head glow-sub-alt" style="color:var(--yellow);font-size:70px;text-align:center">Adoptable Sidekicks</h2>
+    <h3 class="comic-head glow-h3" style="color:var(--lime);font-size:40px;text-align:center">Fight rising unemployment! Put a sidekick to work!</h3>
+    <h2 class="comic-head glow-h2" style="color:var(--yellow);font-size:70px;text-align:center">Adoptable Sidekicks</h2>
     <script>
       var AAPPetScrollerSettings = {
         'searchtools_box_width': '350',
@@ -351,16 +236,14 @@ footer a {
       };
     </script>
     <script src="https://images.adoptapet.com/js/st-portable-pet-list.js"></script>
-  </section> 
-
+  </section>
   <footer>
-    <p class="comic-head glow-sub-alt" style="color:var(--yellow);font-size:30px">Follow the Mayhem</p>
+    <p class="comic-head glow-h2" style="color:var(--yellow);font-size:30px">Follow the Mayhem</p>
     <a href="https://facebook.com/YOURPAGE" target="_blank">Facebook</a>
     <a href="https://instagram.com/YOURPAGE" target="_blank">Instagram</a>
     <a href="https://tiktok.com/@YOURPAGE" target="_blank">TikTok</a>
     <p style="margin-top:20px;color:#777;font-size:34px">© <script>document.write(new Date().getFullYear());</script> Mayhem’s Home • 501(c)(3) eligible</p>
   </footer>
-
   <a href="#contact" id="contactBubble" class="contact-bubble">CONTACT</a>
   <div id="contactPanel" class="contact-panel"></div>
 </body>
