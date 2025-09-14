@@ -19,15 +19,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&family=Raleway:wght@400;600;800&display=swap" rel="stylesheet">
-<style>
-  body {
-    position: center;
-    padding: 10px;
-    box-shadow: 0 0 20px magenta, 0 0 30px magenta, 0 0 40px magenta;
-    border: 10px solid transparent; /* Optional: Keeps layout stable */
-    border-radius: 20px;
-  }
-</style>
+<body {
+  margin: 0;
+  padding: 10px;
+  font-family: "Raleway", sans-serif;
+  background: #000;
+  color: #fff;
+  border: 10px solid var(--yellow); /* Big neon border */
+  border-radius: 16px;
+  /* Stacked glows: yellow (close), magenta (medium), purple (far) */
+  box-shadow: 
+    0 0 24px 8px var(--yellow), 
+    0 0 48px 18px var(--magenta), 
+    0 0 80px 28px var(--purple);
+}
   <style>
     .btn-comic.purple   { background: var(--purple);   color: #fff; }
 .btn-comic.magenta  { background: var(--magenta);  color: #fff; }
