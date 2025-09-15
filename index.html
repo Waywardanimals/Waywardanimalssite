@@ -284,38 +284,64 @@
 }
   </style>
 <!DOCTYPE html>
-<html lang="en">
+<<!-- Chief Mayhem Navigator Pop-Up -->
+<div id="cmn-overlay" class="modal-overlay" onclick="closeCMN()"></div>
+<div id="cmn-popup" class="modal-popup" aria-hidden="true" aria-labelledby="popup-title" aria-describedby="popup-description">
+  <h2 id="popup-title">Chief Mayhem Navigator</h2>
+  <p id="popup-description">Let Chief Mayhem guide you through the adoption process!</p>
+  <button class="btn-comic btn-magenta" onclick="closeCMN()">Close</button>
+</div>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    #cmn-popup,
-    #cmn-overlay {
-      display: none;
-      position: fixed;
-    }
+<style>
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+  }
 
-    #cmn-overlay {
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 999;
-    }
+  .modal-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--yellow);
+    color: var(--ink);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px 5px var(--magenta);
+    z-index: 1000;
+  }
 
-    #cmn-popup {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: yellow;
-      color: black;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px 5px magenta;
-      z-index: 1000;
-    }
-  </style>
+  .modal-popup[aria-hidden="false"] {
+    display: block;
+  }
+
+  .modal-overlay[aria-hidden="false"] {
+    display: block;
+  }
+</style>
+
+<script>
+  function openCMN() {
+    const popup = document.getElementById('cmn-popup');
+    const overlay = document.getElementById('cmn-overlay');
+    popup.setAttribute('aria-hidden', 'false');
+    overlay.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeCMN() {
+    const popup = document.getElementById('cmn-popup');
+    const overlay = document.getElementById('cmn-overlay');
+    popup.setAttribute('aria-hidden', 'true');
+    overlay.setAttribute('aria-hidden', 'true');
+  }
+</script>
 <body>
   <button onclick="openCMN()">Sidekick Sign-Up</button>
   <div id="cmn-overlay" onclick="closeCMN()"></div>
@@ -337,8 +363,6 @@
     }
   </script>
 </body>
-<<!-- Overlay for Popup -->
-<div id="cmn-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:999;" onclick="closeCMN()"></div>
 
 <!-- Popup for Chief Mayhem Navigator -->
 <div id="cmn-popup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:var(--yellow); color:var(--ink); padding:20px; border-radius:12px; box-shadow:0 0 20px 5px var(--magenta); z-index:1000; max-width:400px; text-align:center;">
@@ -421,22 +445,6 @@
   
 <!-- Trigger Button -->
 <section id="adopt">
-  <h3 class="glow-h3">Fight rising unemployment! Put a sidekick to work!</h3>
-<!-- JavaScript Functions -->
-<script>
-  // Function to open the Chief Mayhem Navigator popup
-  function openCMN() {
-    document.getElementById('cmn-popup').style.display = 'block';
-    document.getElementById('cmn-overlay').style.display = 'block';
-  }
-
-  // Function to close the Chief Mayhem Navigator popup
-  function closeCMN() {
-    document.getElementById('cmn-popup').style.display = 'none';
-    document.getElementById('cmn-overlay').style.display = 'none';
-  }
-</script>
-</body>
 </html>
 <!-- Adoptable Dogs Widget -->
 <section id="adopt">
