@@ -306,26 +306,49 @@
 </body>
 </html>
 </head>
-<body>
-  <button onclick="openCMN()">Sidekick Sign-Up</button>
-  <div id="cmn-overlay" onclick="closeCMN()"></div>
-  <div id="cmn-popup">
-    <h2>Chief Mayhem Navigator</h2>
-    <p>Let Chief Mayhem guide you through the adoption process!</p>
-    <button onclick="closeCMN()">Close</button>
+<<!-- Overlay for Popup -->
+<div id="cmn-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:999;" onclick="closeCMN()"></div>
+
+<!-- Popup for Chief Mayhem Navigator -->
+<div id="cmn-popup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:var(--yellow); color:var(--ink); padding:20px; border-radius:12px; box-shadow:0 0 20px 5px var(--magenta); z-index:1000; max-width:400px; text-align:center;">
+  <h2>Chief Mayhem Navigator</h2>
+  <p>Let Chief Mayhem guide you through the adoption process!</p>
+  <button style="padding:10px 20px; border:none; border-radius:8px; background:var(--magenta); color:#fff; cursor:pointer;" onclick="closeCMN()">Close</button>
+</div>
+
+<!-- Hero Section -->
+<section id="hero">
+  <h1 class="glow-h1">Welcome to Mayhem’s Home</h1>
+  <h3 class="glow-h3">Where chaos meets cuddles</h3>
+  <p>
+    We’re the last stop for the dogs who just can't decide if they're heroes or chaos gremlins hovering somewhere between chaotic neutral and henchmen; the unruly, the loud, the misunderstood...
+  </p>
+  <div id="chief-container">
+    <img id="heroImg" src="assets/Hero.png" alt="Chief Mayhem Navigator"
+         style="width:350px; border:6px solid var(--ink); border-radius:18px; box-shadow:20px 20px 0 var(--ink); max-width:100%;">
   </div>
+</section>
 
-  <script>
-    function openCMN() {
-      document.getElementById('cmn-popup').style.display = 'block';
-      document.getElementById('cmn-overlay').style.display = 'block';
-    }
+<!-- Trigger Button -->
+<section id="adopt">
+  <h3 class="glow-h3">Fight rising unemployment! Put a sidekick to work!</h3>
+  <button class="btn-comic btn-magenta" onclick="openCMN()">Sidekick Sign-Up</button>
+</section>
 
-    function closeCMN() {
-      document.getElementById('cmn-popup').style.display = 'none';
-      document.getElementById('cmn-overlay').style.display = 'none';
-    }
-  </script>
+<!-- JavaScript Functions -->
+<script>
+  // Function to open the Chief Mayhem Navigator popup
+  function openCMN() {
+    document.getElementById('cmn-popup').style.display = 'block';
+    document.getElementById('cmn-overlay').style.display = 'block';
+  }
+
+  // Function to close the Chief Mayhem Navigator popup
+  function closeCMN() {
+    document.getElementById('cmn-popup').style.display = 'none';
+    document.getElementById('cmn-overlay').style.display = 'none';
+  }
+</script>
 </body>
 </html>
 <body>
