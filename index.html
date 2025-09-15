@@ -28,11 +28,20 @@
       min-height: 100vh;
     }
     section,
-    #chief-container > div {
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+#chief-container {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column; /* Align content vertically */
+  padding: 20px; /* Add spacing around the image */
+}
+#heroImg {
+  max-width: 90%; /* Ensure the image is responsive */
+  height: auto; /* Keep the aspect ratio */
+  border: 6px solid var(--ink); /* Border styling */
+  border-radius: 18px; /* Rounded corners */
+  box-shadow: 20px 20px 0 var(--ink); /* Shadow effect */
+}
     h1, h2, .glow-h1, .glow-h2, .comic-head {
       font-family: 'Luckiest Guy', cursive, Arial, sans-serif;
       letter-spacing: 1px;
