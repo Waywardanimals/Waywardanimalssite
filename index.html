@@ -36,23 +36,104 @@
         0 0 120px 30px var(--purple);
       min-height: 100vh;
     }
-    /* Section and Hero Image Styling */
-    section,
-    #chief-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 20px;
-    }
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: #000;
+  border: 10px solid var(--yellow);
+  border-radius: 20px;
+  box-shadow: 
+    0 0 40px 10px var(--yellow),
+    0 0 80px 20px var(--magenta),
+    0 0 120px 30px var(--purple);
+}
 
-    #heroImg {
-      max-width: 90%;
-      height: auto;
-      border: 6px solid var(--ink);
-      border-radius: 18px;
-      box-shadow: 20px 20px 0 var(--ink);
-    }
+#hero-img {
+  max-width: 80%;
+  height: auto;
+  border: 6px solid var(--ink);
+  border-radius: 18px;
+  box-shadow: 20px 20px 0 var(--ink);
+  margin: 20px 0;
+}
+
+.glow-h1 {
+  color: yellow;
+  font-size: 4.5rem;
+  text-shadow:
+    0 0 10px var(--lime),
+    0 0 20px var(--yellow),
+    0 0 40px var(--magenta),
+    0 0 80px var(--purple);
+  margin-bottom: 10px;
+}
+
+.glow-h2 {
+  color: var(--yellow);
+  font-size: 2.5rem;
+  text-shadow:
+    0 0 8px var(--lime),
+    0 0 18px var(--yellow);
+  margin-bottom: 20px;
+}
+
+.glow-tagline {
+  color: #fff;
+  font-size: 1.2rem;
+  text-shadow:
+    0 0 8px var(--magenta),
+    0 0 18px var(--yellow);
+  margin-bottom: 30px;
+}
+
+.chaos-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.btn-comic {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Luckiest Guy', cursive, Arial, sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.btn-comic:hover {
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 8px 8px 0 var(--ink), 0 0 16px #fff;
+}
+
+/* Button Colors */
+.btn-magenta {
+  background: var(--magenta);
+  color: #fff;
+}
+
+.btn-purple {
+  background: var(--purple);
+  color: #fff;
+}
+
+.btn-lime {
+  background: var(--lime);
+  color: #222;
+}
+
+.btn-yellow {
+  background: var(--yellow);
+  color: #222;
+}
     
         /* Headings */
     h1, h2, .glow-h1, .glow-h2, .comic-head {
