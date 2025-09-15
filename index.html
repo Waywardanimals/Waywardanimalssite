@@ -416,7 +416,11 @@
     <a href="https://facebook.com/YOURPAGE" target="_blank" rel="noopener noreferrer">Facebook</a>
     <a href="https://instagram.com/YOURPAGE" target="_blank" rel="noopener noreferrer">Instagram</a>
     <a href="https://tiktok.com/@YOURPAGE" target="_blank" rel="noopener noreferrer">TikTok</a>
-    <p style="margin-top:20px;color:#777;font-size:1rem">© <script>document.write(new Date().getFullYear());</script> Mayhem’s Home • 501(c)(3) eligible</p>
+  <span id="currentYear"></span>
+<script>
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+<p> <h2>501c3 Eligible</p></h2>
   </footer>
   <a href="#contact" id="contactBubble" class="contact-bubble">CONTACT</a>
   <div id="contactPanel" class="contact-panel"></div>
