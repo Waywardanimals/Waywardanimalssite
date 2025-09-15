@@ -250,6 +250,23 @@
     }
   </style>
 </head>
+<div id="cmn-overlay"></div>
+<div id="cmn-popup">
+  <h2>Chief Mayhem Navigator</h2>
+  <p>Let Chief Mayhem guide you through the adoption process!</p>
+  <button onclick="closeCMN()">Close</button>
+</div>
+<script>
+  function openCMN() {
+    document.getElementById('cmn-popup').style.display = 'block';
+    document.getElementById('cmn-overlay').style.display = 'block';
+  }
+
+  function closeCMN() {
+    document.getElementById('cmn-popup').style.display = 'none';
+    document.getElementById('cmn-overlay').style.display = 'none';
+  }
+</script>
 <body>
   <section id="hero">
     <h1 class="glow-h1">Welcome to Mayhem’s Home</h1>
