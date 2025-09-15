@@ -248,6 +248,35 @@
       text-decoration: none;
       font-family: 'Bangers', cursive;
     }
+    /* Lime Green Button with Rainbow Glow */
+.btn-lime-glow {
+  background: var(--lime); /* Lime green background */
+  color: #222; /* Dark text for contrast */
+  border: 4px solid var(--ink); /* Dark border */
+  border-radius: 12px; /* Rounded corners */
+  padding: 16px 32px; /* Button padding */
+  font-size: 1.1rem; /* Font size */
+  font-family: 'Luckiest Guy', cursive, Arial, sans-serif; /* Font style */
+  text-transform: uppercase; /* Uppercase text */
+  cursor: pointer; /* Pointer cursor */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline button */
+  box-shadow: 
+    0 0 10px var(--lime), 
+    0 0 20px var(--yellow), 
+    0 0 30px var(--magenta), 
+    0 0 40px var(--purple); /* Rainbow glow */
+  transition: transform 0.12s, box-shadow 0.12s; /* Smooth transitions */
+}
+
+.btn-lime-glow:hover {
+  transform: scale(1.09) rotate(1deg); /* Slightly grow and rotate on hover */
+  box-shadow: 
+    0 0 20px var(--lime), 
+    0 0 30px var(--yellow), 
+    0 0 40px var(--magenta), 
+    0 0 50px var(--purple); /* Enhance glow on hover */
+}
   </style>
 <!DOCTYPE html>
 <html lang="en">
