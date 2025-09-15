@@ -31,8 +31,6 @@
         0 0 120px 30px var(--purple);
       min-height: 100vh;
     }
-  </style>
-  
     /* Section and Hero Image Styling */
     section,
     #chief-container {
@@ -282,8 +280,48 @@
     0 0 40px var(--magenta), 
     0 0 50px var(--purple); /* Enhance glow on hover */
 }
-  </style>
-<!DOCTYPE html>
+<!-- Chief Mayhem Navigator Pop-Up -->
+<div id="cmn-overlay" class="modal-overlay" onclick="closeCMN()"></div>
+<div id="cmn-popup" class="modal-popup" aria-hidden="true" aria-labelledby="popup-title" aria-describedby="popup-description">
+  <h2 id="popup-title">Chief Mayhem Navigator</h2>
+  <p id="popup-description">Let Chief Mayhem guide you through the adoption process!</p>
+  <button class="btn-comic btn-magenta" onclick="closeCMN()">Close</button>
+</div>
+
+<style>
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+  }
+
+  .modal-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--yellow);
+    color: var(--ink);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px 5px var(--magenta);
+    z-index: 1000;
+  }
+
+  .modal-popup[aria-hidden="false"] {
+    display: block;
+  }
+
+  .modal-overlay[aria-hidden="false"] {
+    display: block;
+  }
+</style>
 
 <script>
   function openCMN() {
@@ -300,13 +338,16 @@
     overlay.setAttribute('aria-hidden', 'true');
   }
 </script>
+  </style>
+<!DOCTYPE html>
+
+<script>
 </body>
 
 <!-- Popup for Chief Mayhem Navigator -->
-<div id="cmn-popup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:var(--yellow); color:var(--ink); padding:20px; border-radius:12px; box-shadow:0 0 20px 5px var(--magenta); z-index:1000; max-width:400px; text-align:center;">
   <h2>Chief Mayhem Navigator</h2>
-  <p>Let Chief Mayhem guide you through the adoption process!</p>
-  <button style="padding:10px 20px; border:none; border-radius:8px; background:var(--magenta); color:#fff; cursor:pointer;" onclick="closeCMN()">Close</button>
+  <p>Join the Chaos, Adopt your very own Sidekick today!</p>
+
 </div>
 
 <body>
