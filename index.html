@@ -19,66 +19,45 @@
       --lime: #00ff84;
     }
 
-    /* Body Styling */
     body {
   box-sizing: border-box;
+  font-family: 'Luckiest Guy', Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  line-height: 2.1;
+  color: #fff;
+  background: #000;
+  margin: 0;
   padding: 30px;
-  /* ...existing styles... */
-}
-
-/* Responsive body for mobile */
-@media (max-width: 700px) {
-  body {
-    padding: 8px;
-    border-width: 4px;
-    font-size: 1.1rem;
-  }
-  #hero {
-    padding: 18px 2px;
-    border-width: 4px;
-  }
-  #hero-img {
-    max-width: 98vw; /* Make sure hero image fits */
-    margin: 12px 0;
-  }
-  section {
-    padding: 12px 2px;
-  }
-  .glow-h1, .glow-h2, .glow-h3, .glow-h4 {
-    font-size: 1.3rem;
-    word-break: break-word;
-  }
-  p, li, .body-text {
-    font-size: 1rem;
-    max-width: 97vw;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  img, .responsive-img {
-    max-width: 98vw;
-  }
-}
-
-/* Prevent horizontal overflow everywhere */
-html, body {
+  border: 10px solid #ffe600;
+  border-radius: 20px;
+  box-shadow:
+    0 0 40px 10px #ffe600,
+    0 0 80px 20px #ff00c3,
+    0 0 120px 30px #7c34ff;
+  min-height: 100vh;
   max-width: 100vw;
   overflow-x: hidden;
 }
-      font-family: 'Luckiest Guy', Arial, Helvetica, sans-serif;
-      font-size: 2rem;
-      line-height: 2.1;
-      color: #fff;
-      background: #000;
-      margin: 0;
-      padding: 30px;
-      border: 10px solid var(--yellow);
-      border-radius: 20px;
-      box-shadow: 
-        0 0 40px 10px var(--yellow),
-        0 0 80px 20px var(--magenta),
-        0 0 120px 30px var(--purple);
-      min-height: 100vh;
-    }
+
+section {
+  padding: 36px 16px;
+  margin-bottom: 34px;
+  background: transparent;
+  border-radius: 14px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img, .responsive-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
 #hero {
   display: flex;
   flex-direction: column;
@@ -86,88 +65,81 @@ html, body {
   text-align: center;
   padding: 40px 20px;
   background: #000;
-  border: 10px solid var(--yellow);
+  border: 10px solid #ffe600;
   border-radius: 20px;
-  box-shadow: 
-    0 0 40px 10px var(--yellow),
-    0 0 80px 20px var(--magenta),
-    0 0 120px 30px var(--purple);
+  box-shadow:
+    0 0 40px 10px #ffe600,
+    0 0 80px 20px #ff00c3,
+    0 0 120px 30px #7c34ff;
+  margin-bottom: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #hero-img {
-  max-width: 80%;
+  max-width: 80vw;
   height: auto;
-  border: 6px solid var(--ink);
+  border: 6px solid #222;
   border-radius: 18px;
-  box-shadow: 20px 20px 0 var(--ink);
+  box-shadow: 20px 20px 0 #222;
   margin: 20px 0;
 }
-img, .responsive-img {
-  display: block;
+
+h1, h2, .glow-h1, .glow-h2, .comic-head {
+  font-family: 'Luckiest Guy', cursive, Arial, sans-serif;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0.7em 0 0.35em 0;
+  word-break: break-word;
+}
+
+p, li, .body-text {
+  font-family: 'Nunito', Arial, Helvetica, sans-serif;
+  font-size: 1.13rem;
+  line-height: 1.7;
+  color: #fff;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 75%;
-  height: auto;
-}
-.glow-h1 {
-  color: yellow;
-  font-size: 4.5rem;
-  text-shadow:
-    0 0 10px var(--lime),
-    0 0 20px var(--yellow),
-    0 0 40px var(--magenta),
-    0 0 80px var(--purple);
-  margin-bottom: 10px;
+  text-align: left;
+  margin-bottom: 1.1em;
+  word-break: break-word;
 }
 
-.glow-h2 {
-  color: var(--yellow);
-  font-size: 2.5rem;
-  text-shadow:
-    0 0 8px var(--lime),
-    0 0 18px var(--yellow);
-  margin-bottom: 20px;
-}
-
-.glow-tagline {
-  color: #fff;
-  font-size: 2 rem;
-  text-shadow:
-    0 0 8px var(--magenta),
-    0 0 18px var(--yellow);
-  margin-bottom: 30px;
-}
-.chaos-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 36px; /* More space between buttons */
-  justify-content: center;
-  margin: 64px 0; /* More space above and below */
-}
-
-.chaos-buttons a.btn-comic {
-  min-width: 220px;        /* Bigger buttons */
-  padding: 20px 36px;      /* More padding for bigger tap targets */
-  margin-bottom: 20px;     /* Extra space under buttons */
-  font-size: 2.2rem;       /* Larger font */
-  text-align: center;
-  border-radius: 18px;     /* More rounded corners */
-  box-shadow: 0 6px 16px rgba(0,0,0,0.13);
-}
-
+/* Responsive styles for mobile */
 @media (max-width: 700px) {
-  .chaos-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-    margin: 48px 0;
+  body {
+    padding: 8px;
+    border-width: 4px;
+    font-size: 1.1rem;
   }
-  .chaos-buttons a.btn-comic {
-    width: 95vw;
-    max-width: 340px;
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    padding: 16px 10px;
+  section {
+    padding: 12px 2px;
+    margin-bottom: 18px;
+    max-width: 99vw;
+  }
+  #hero {
+    padding: 18px 2px;
+    border-width: 4px;
+    margin-bottom: 20px;
+    max-width: 99vw;
+  }
+  #hero-img {
+    max-width: 98vw;
+    margin: 12px 0;
+  }
+  h1, h2, .glow-h1, .glow-h2, .comic-head {
+    font-size: 1.3rem;
+    margin: 0.5em 0 0.2em 0;
+  }
+  p, li, .body-text {
+    font-size: 1rem;
+    max-width: 97vw;
+    margin-bottom: 0.8em;
+  }
+  img, .responsive-img {
+    max-width: 98vw;
   }
 }
         /* Headings */
