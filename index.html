@@ -94,7 +94,62 @@ img, .responsive-img {
     0 0 18px var(--yellow);
   margin-bottom: 30px;
 }
+.chaos-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin: 48px 0;
+}
 
+.chaos-buttons a.btn-comic {
+  min-width: 180px;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* Rainbow Glow Animation */
+.rainbow-glow-btn {
+  box-shadow:
+    0 0 16px 4px #ff00c3,
+    0 0 32px 8px #7c34ff,
+    0 0 48px 16px #00ff84,
+    0 0 64px 24px #ffe600;
+  animation: rainbow-glow 2s linear infinite;
+}
+
+@keyframes rainbow-glow {
+  0% { box-shadow: 0 0 16px 4px #ff00c3, 0 0 32px 8px #7c34ff, 0 0 48px 16px #00ff84, 0 0 64px 24px #ffe600; }
+  25% { box-shadow: 0 0 16px 4px #7c34ff, 0 0 32px 8px #00ff84, 0 0 48px 16px #ffe600, 0 0 64px 24px #ff00c3; }
+  50% { box-shadow: 0 0 16px 4px #00ff84, 0 0 32px 8px #ffe600, 0 0 48px 16px #ff00c3, 0 0 64px 24px #7c34ff; }
+  75% { box-shadow: 0 0 16px 4px #ffe600, 0 0 32px 8px #ff00c3, 0 0 48px 16px #7c34ff, 0 0 64px 24px #00ff84; }
+  100% { box-shadow: 0 0 16px 4px #ff00c3, 0 0 32px 8px #7c34ff, 0 0 48px 16px #00ff84, 0 0 64px 24px #ffe600; }
+}
+
+/* Comic-style offsets for each button */
+.offset-btn-1 { transform: rotate(-6deg) translateY(-2px); }
+.offset-btn-2 { transform: rotate(4deg) translateY(3px); }
+.offset-btn-3 { transform: rotate(-3deg) translateY(-4px); }
+.offset-btn-4 { transform: rotate(5deg) translateY(2px); }
+.offset-btn-5 { transform: rotate(-5deg) translateY(5px); }
+.offset-btn-6 { transform: rotate(7deg) translateY(-3px); }
+.offset-btn-7 { transform: rotate(-8deg) translateY(4px); }
+
+/* Responsive for mobile */
+@media (max-width: 650px) {
+  .chaos-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .chaos-buttons a.btn-comic {
+    width: 90vw;
+    max-width: 350px;
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+}
 .rainbow-glow-btn {
   box-shadow:
     0 0 16px 4px #ff00c3,
