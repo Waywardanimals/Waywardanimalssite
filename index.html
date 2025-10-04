@@ -97,41 +97,36 @@ img, .responsive-img {
 .chaos-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 36px; /* More space between buttons */
   justify-content: center;
-  margin: 48px 0;
+  margin: 64px 0; /* More space above and below */
 }
 
 .chaos-buttons a.btn-comic {
-  min-width: 100px;
-  margin-bottom: 12px;
-  font-size: 2 rem;
+  min-width: 220px;        /* Bigger buttons */
+  padding: 20px 36px;      /* More padding for bigger tap targets */
+  margin-bottom: 20px;     /* Extra space under buttons */
+  font-size: 2.2rem;       /* Larger font */
   text-align: center;
+  border-radius: 18px;     /* More rounded corners */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.13);
 }
 
-/* Comic-style offsets for each button */
-.offset-btn-1 { transform: rotate(-6deg) translateY(-2px); }
-.offset-btn-2 { transform: rotate(4deg) translateY(3px); }
-.offset-btn-3 { transform: rotate(-3deg) translateY(-4px); }
-.offset-btn-4 { transform: rotate(5deg) translateY(2px); }
-.offset-btn-5 { transform: rotate(-5deg) translateY(5px); }
-.offset-btn-6 { transform: rotate(7deg) translateY(-3px); }
-.offset-btn-7 { transform: rotate(-8deg) translateY(4px); }
-
-/* Responsive for mobile */
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   .chaos-buttons {
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 18px;
+    margin: 48px 0;
   }
   .chaos-buttons a.btn-comic {
-    width: 90vw;
-    max-width: 350px;
-    font-size: 2rem;
-    margin-bottom: 12px;
+    width: 95vw;
+    max-width: 340px;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    padding: 16px 10px;
   }
-    
+}
         /* Headings */
     h1, h2, .glow-h1, .glow-h2, .comic-head {
       font-family: 'Luckiest Guy', cursive, Arial, sans-serif;
