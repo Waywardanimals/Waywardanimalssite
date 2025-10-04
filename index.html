@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Meta Tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Internal Styles -->
   <style>
-    /* Color Variables */
     :root {
       --ink: #222;
       --yellow: #ffe600;
@@ -20,483 +18,299 @@
     }
 
     body {
-  box-sizing: border-box;
-  font-family: 'Luckiest Guy', Arial, Helvetica, sans-serif;
-  font-size: 2rem;
-  line-height: 2.1;
-  color: #fff;
-  background: #000;
-  margin: 0;
-  padding: 30px;
-  border: 10px solid #ffe600;
-  border-radius: 20px;
-  box-shadow:
-    0 0 40px 10px #ffe600,
-    0 0 80px 20px #ff00c3,
-    0 0 120px 30px #7c34ff;
-  min-height: 100vh;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+      box-sizing: border-box;
+      font-family: 'Luckiest Guy', Arial, Helvetica, sans-serif;
+      font-size: 2rem;
+      line-height: 2.1;
+      color: #fff;
+      background: #000;
+      margin: 0;
+      padding: 30px;
+      border: 10px solid var(--yellow);
+      border-radius: 20px;
+      box-shadow:
+        0 0 40px 10px var(--yellow),
+        0 0 80px 20px var(--magenta),
+        0 0 120px 30px var(--purple);
+      min-height: 100vh;
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
 
-section {
-  padding: 36px 16px;
-  margin-bottom: 34px;
-  background: transparent;
-  border-radius: 14px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
+    section {
+      padding: 36px 16px;
+      margin-bottom: 34px;
+      background: transparent;
+      border-radius: 14px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-img, .responsive-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-  height: auto;
-  border-radius: 14px;
-}
+    img, .responsive-img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 14px;
+    }
 
-#hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 40px 20px;
-  background: #000;
-  border: 10px solid #ffe600;
-  border-radius: 20px;
-  box-shadow:
-    0 0 40px 10px #ffe600,
-    0 0 80px 20px #ff00c3,
-    0 0 120px 30px #7c34ff;
-  margin-bottom: 40px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
+    #hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: #000;
+      border: 10px solid var(--yellow);
+      border-radius: 20px;
+      box-shadow:
+        0 0 40px 10px var(--yellow),
+        0 0 80px 20px var(--magenta),
+        0 0 120px 30px var(--purple);
+      margin-bottom: 40px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-#hero-img {
-  max-width: 80vw;
-  height: auto;
-  border: 6px solid #222;
-  border-radius: 18px;
-  box-shadow: 20px 20px 0 #222;
-  margin: 20px 0;
-}
+    #hero-img {
+      max-width: 80vw;
+      height: auto;
+      border: 6px solid var(--ink);
+      border-radius: 18px;
+      box-shadow: 20px 20px 0 var(--ink);
+      margin: 20px 0;
+    }
 
-h1, h2, .glow-h1, .glow-h2, .comic-head {
-  font-family: 'Luckiest Guy', cursive, Arial, sans-serif;
-  letter-spacing: 1px;
-  text-align: center;
-  margin: 0.7em 0 0.35em 0;
-  word-break: break-word;
-}
-
-p, li, .body-text {
-  font-family: 'Nunito', Arial, Helvetica, sans-serif;
-  font-size: 1.13rem;
-  line-height: 1.7;
-  color: #fff;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-  margin-bottom: 1.1em;
-  word-break: break-word;
-}
-
-/* Responsive styles for mobile */
-@media (max-width: 700px) {
-  body {
-    padding: 8px;
-    border-width: 4px;
-    font-size: 1.1rem;
-  }
-  section {
-    padding: 12px 2px;
-    margin-bottom: 18px;
-    max-width: 99vw;
-  }
-  #hero {
-    padding: 18px 2px;
-    border-width: 4px;
-    margin-bottom: 20px;
-    max-width: 99vw;
-  }
-  #hero-img {
-    max-width: 98vw;
-    margin: 12px 0;
-  }
-  h1, h2, .glow-h1, .glow-h2, .comic-head {
-    font-size: 1.3rem;
-    margin: 0.5em 0 0.2em 0;
-  }
-  p, li, .body-text {
-    font-size: 1rem;
-    max-width: 97vw;
-    margin-bottom: 0.8em;
-  }
-  img, .responsive-img {
-    max-width: 98vw;
-  }
-}
-        /* Headings */
     h1, h2, .glow-h1, .glow-h2, .comic-head {
       font-family: 'Luckiest Guy', cursive, Arial, sans-serif;
       letter-spacing: 1px;
       text-align: center;
       margin: 0.7em 0 0.35em 0;
-    }
-
-    h3, h4, .glow-h3, .glow-h4 {
-      font-family: 'Luckiest Guy', cursive, Arial, sans-serif;
-      letter-spacing: 0.5px;
-      text-align: center;
-      margin: 0.5em 0 0.2em 0;
+      word-break: break-word;
     }
 
     .glow-h1 {
-      color: yellow;
-      font-size: 5rem;
+      color: var(--yellow);
+      font-size: 4.5rem;
       text-shadow:
         0 0 10px var(--lime),
         0 0 20px var(--yellow),
         0 0 40px var(--magenta),
         0 0 80px var(--purple);
-      letter-spacing: 1.5px;
-      margin: 0.7em 0 0.5em 0;
-      text-align: center;
+      margin-bottom: 10px;
     }
-    /* Underdog Success Stories: green glow */
-    #stories .glow-h2 {
-      color: #fff;
-      font-size: 2rem;
-      text-shadow:
-        0 0 8px var(--lime),
-        0 0 12px var(--lime),
-        0 0 18px var(--lime);
-      letter-spacing: 1.5px;
-      margin: 0.7em 0 0.35em 0;
-      text-align: center;
-    }
-    /* Adoptable Sidekicks: yellow + white glow */
-    #adopt .glow-h2 {
+
+    .glow-h2 {
       color: var(--yellow);
       font-size: 2.5rem;
-      text-shadow: 0 0 10px #fff;
-      letter-spacing: 1.5px;
-      margin: 0.7em 0 0.35em 0;
-      text-align: center;
-    }
-    /* All other .glow-h2 default style */
-    section:not(#stories):not(#adopt) .glow-h2,
-    footer .glow-h2 {
-      color: #fff;
-      font-size: 2.5rem;
       text-shadow:
-        0 0 4px var(--magenta),
-        0 0 8px var(--purple),
-        0 0 0px var(--yellow);
-      display: block;
-      text-align: center;
+        0 0 8px var(--lime),
+        0 0 18px var(--yellow);
+      margin-bottom: 20px;
     }
-    .glow-h3 {
-  color: var(--lime);
-  font-size: 3.5rem;
-  text-shadow:
-    0 0 8px var(--magenta),
-    0 0 24px var(--magenta),
-    0 0 48px var(--magenta);
-  letter-spacing: 1.5px;
-  margin: 0.5em 0 0.2em 0;
-  text-align: center;
-}
-    .glow-h4 {
-      color: #fff;
-      font-size: 2rem;
-      text-shadow:
-        0 0 2px var(--lime),
-        0 0 4px var(--yellow);
-    }
+
     .glow-tagline {
       color: #fff;
       font-size: 1.2rem;
       text-shadow:
         0 0 8px var(--magenta),
         0 0 18px var(--yellow);
-      margin: 8px 0 18px 0;
-      padding: 4px 16px;
+      margin-bottom: 30px;
       display: inline-block;
       text-align: center;
+      padding: 4px 16px;
     }
+
     p, li, .body-text {
       font-family: 'Nunito', Arial, Helvetica, sans-serif;
       font-size: 1.13rem;
       line-height: 1.7;
-      margin-bottom: 1.1em;
       color: #fff;
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
       text-align: left;
+      margin-bottom: 1.1em;
+      word-break: break-word;
     }
-  button, .btn-comic {
-  padding: 10px 16px; /* Adjust padding to fit text better */
-  min-width: 100px; /* Set a reasonable minimum width */
-  border-radius: 8px; /* Rounded corners */
-  font-size: 1rem; /* Adjust font size */
-  font-family: 'Luckiest Guy', cursive, Arial, sans-serif; /* Keep the custom font */
-  text-transform: uppercase; /* Ensure text is uppercase */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
-}
-    .btn-comic:hover {
+
+    /* BUTTONS */
+    .chaos-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 36px;
+      justify-content: center;
+      margin: 64px 0;
+    }
+
+    .chaos-buttons a.btn-comic {
+      min-width: 220px;
+      padding: 20px 36px;
+      margin-bottom: 20px;
+      font-size: 2.2rem;
+      text-align: center;
+      border-radius: 18px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.13);
+      word-break: break-word;
+      position: relative;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-yellow  { background: var(--yellow); color: var(--ink); }
+    .btn-magenta { background: var(--magenta); color: #fff; }
+    .btn-purple  { background: var(--purple); color: #fff; }
+    .btn-lime    { background: var(--lime); color: var(--ink); }
+
+    .chaos-buttons .btn-comic:hover {
       transform: scale(1.09) rotate(2deg) translateY(-2px);
       z-index: 1;
       box-shadow: 8px 8px 0 var(--ink), 0 0 16px #fff;
     }
-    .btn-magenta { background: var(--magenta) !important; color: #fff !important; }
-    .btn-yellow  { background: var(--yellow) !important; color: #222 !important; }
-    .btn-purple  { background: var(--purple) !important; color: #fff !important; }
-    .btn-lime    { background: var(--lime) !important; color: #222 !important; }
-    .chaos-buttons .btn-comic { position: relative; }
-    .chaos-buttons .btn-comic:nth-child(1) { transform: rotate(-6deg) translateY(-2px); }
-    .chaos-buttons .btn-comic:nth-child(2) { transform: rotate(4deg) translateY(3px); }
-    .chaos-buttons .btn-comic:nth-child(3) { transform: rotate(-3deg) translateY(-4px); }
-    .chaos-buttons .btn-comic:nth-child(4) { transform: rotate(5deg) translateY(2px); }
-    .chaos-buttons .btn-comic:nth-child(5) { transform: rotate(-5deg) translateY(5px); }
-    .chaos-buttons .btn-comic:nth-child(6) { transform: rotate(7deg) translateY(-3px); }
-    .chaos-buttons .btn-comic:nth-child(7) { transform: rotate(-8deg) translateY(4px); }
+
+    /* Rainbow Glow Only for special buttons */
     .rainbow-glow-btn {
-      position: relative;
-      z-index: 1;
       box-shadow:
-        0 0 16px 4px #ff00c3,
-        0 0 32px 8px #7c34ff,
-        0 0 48px 16px #00ff84,
-        0 0 64px 24px #ffe600;
+        0 0 16px 4px var(--magenta),
+        0 0 32px 8px var(--purple),
+        0 0 48px 16px var(--lime),
+        0 0 64px 24px var(--yellow);
       animation: rainbow-glow 2s linear infinite;
     }
     @keyframes rainbow-glow {
-      0% {
-        box-shadow:
-          0 0 16px 4px #ff00c3,
-          0 0 32px 8px #7c34ff,
-          0 0 48px 16px #00ff84,
-          0 0 64px 24px #ffe600;
+      0%   { box-shadow: 0 0 16px 4px var(--magenta), 0 0 32px 8px var(--purple), 0 0 48px 16px var(--lime), 0 0 64px 24px var(--yellow);}
+      25%  { box-shadow: 0 0 16px 4px var(--purple), 0 0 32px 8px var(--lime), 0 0 48px 16px var(--yellow), 0 0 64px 24px var(--magenta);}
+      50%  { box-shadow: 0 0 16px 4px var(--lime), 0 0 32px 8px var(--yellow), 0 0 48px 16px var(--magenta), 0 0 64px 24px var(--purple);}
+      75%  { box-shadow: 0 0 16px 4px var(--yellow), 0 0 32px 8px var(--magenta), 0 0 48px 16px var(--purple), 0 0 64px 24px var(--lime);}
+      100% { box-shadow: 0 0 16px 4px var(--magenta), 0 0 32px 8px var(--purple), 0 0 48px 16px var(--lime), 0 0 64px 24px var(--yellow);}
+    }
+
+    /* Comic-style offsets for each button */
+    .offset-btn-1 { transform: rotate(-6deg) translateY(-2px); }
+    .offset-btn-2 { transform: rotate(4deg) translateY(3px); }
+    .offset-btn-3 { transform: rotate(-3deg) translateY(-4px); }
+    .offset-btn-4 { transform: rotate(5deg) translateY(2px); }
+    .offset-btn-5 { transform: rotate(-5deg) translateY(5px); }
+    .offset-btn-6 { transform: rotate(7deg) translateY(-3px); }
+    .offset-btn-7 { transform: rotate(-8deg) translateY(4px); }
+
+    /* Responsive styles for mobile */
+    @media (max-width: 700px) {
+      body {
+        padding: 8px;
+        border-width: 4px;
+        font-size: 1.1rem;
       }
-      25% {
-        box-shadow:
-          0 0 16px 4px #7c34ff,
-          0 0 32px 8px #00ff84,
-          0 0 48px 16px #ffe600,
-          0 0 64px 24px #ff00c3;
+      section {
+        padding: 12px 2px;
+        margin-bottom: 18px;
+        max-width: 99vw;
       }
-      50% {
-        box-shadow:
-          0 0 16px 4px #00ff84,
-          0 0 32px 8px #ffe600,
-          0 0 48px 16px #ff00c3,
-          0 0 64px 24px #7c34ff;
+      #hero {
+        padding: 18px 2px;
+        border-width: 4px;
+        margin-bottom: 20px;
+        max-width: 99vw;
       }
-      75% {
-        box-shadow:
-          0 0 16px 4px #ffe600,
-          0 0 32px 8px #ff00c3,
-          0 0 48px 16px #7c34ff,
-          0 0 64px 24px #00ff84;
+      #hero-img {
+        max-width: 98vw;
+        margin: 12px 0;
       }
-      100% {
-        box-shadow:
-          0 0 16px 4px #ff00c3,
-          0 0 32px 8px #7c34ff,
-          0 0 48px 16px #00ff84,
-          0 0 64px 24px #ffe600;
+      h1, h2, .glow-h1, .glow-h2, .comic-head {
+        font-size: 1.3rem;
+        margin: 0.5em 0 0.2em 0;
+      }
+      .chaos-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        margin: 36px 0;
+      }
+      .chaos-buttons a.btn-comic {
+        width: 98vw;
+        max-width: 99vw;
+        font-size: 1.35rem;
+        margin-bottom: 10px;
+        padding: 16px 6px;
+      }
+      p, li, .body-text {
+        font-size: 1rem;
+        max-width: 97vw;
+        margin-bottom: 0.8em;
+      }
+      img, .responsive-img {
+        max-width: 98vw;
       }
     }
-    @media (max-width: 800px) {
-      body { font-size: 16px; padding: 10px; }
-      h1, .glow-h1 { font-size: 2.2rem; }
-      h2, .glow-h2 { font-size: 2rem; }
-      h3, .glow-h3 { font-size: 1.4rem; }
-      h4, .glow-h4 { font-size: 1.1rem; }
-      .btn-comic, .glow-tagline { font-size: 0.95rem; }
-      p, li, .body-text { font-size: 1rem; }
-      section { padding: 22px 6px; }
-      #chief-container { flex-direction: column; align-items: center; }
-    }
-    #chief-container {
-      display: flex;
-      gap: 32px;
-      align-items: flex-start;
-      flex-wrap: wrap;
-    }
-    footer {
-      background: #111;
-      border-top: 6px solid var(--ink);
-      padding: 20px 20px;
-      text-align: center;
-    }
-    footer a {
-      margin: 0 10px;
-      color: var(--yellow);
-      text-decoration: none;
-      font-family: 'Bangers', cursive;
-    }
-    /* Lime Green Button with Rainbow Glow */
-.btn-lime-glow {
-  background: var(--lime); /* Lime green background */
-  color: #222; /* Dark text for contrast */
-  border: 4px solid var(--ink); /* Dark border */
-  border-radius: 12px; /* Rounded corners */
-  padding: 16px 32px; /* Button padding */
-  font-size: 1.1rem; /* Font size */
-  font-family: 'Luckiest Guy', cursive, Arial, sans-serif; /* Font style */
-  text-transform: uppercase; /* Uppercase text */
-  cursor: pointer; /* Pointer cursor */
-  text-decoration: none; /* Remove underline */
-  display: inline-block; /* Inline button */
-  box-shadow: 
-    0 0 10px var(--lime), 
-    0 0 20px var(--yellow), 
-    0 0 30px var(--magenta), 
-    0 0 40px var(--purple); /* Rainbow glow */
-  transition: transform 0.12s, box-shadow 0.12s; /* Smooth transitions */
-}
-
-.btn-lime-glow:hover {
-  transform: scale(1.09) rotate(1deg); /* Slightly grow and rotate on hover */
-  box-shadow: 
-    0 0 20px var(--lime), 
-    0 0 30px var(--yellow), 
-    0 0 40px var(--magenta), 
-    0 0 50px var(--purple); /* Enhance glow on hover */
-}
-
-<style>
-  .modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 999;
-  }
-
-  .modal-popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--yellow);
-    color: var(--ink);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px 5px var(--magenta);
-    z-index: 1000;
-  }
-
-  .modal-popup[aria-hidden="false"] {
-    display: block;
-  }
-
-  .modal-overlay[aria-hidden="false"] {
-    display: block;
-  }
-</style>
-
-<script>
-  function openCMN() {
-    const popup = document.getElementById('cmn-popup');
-    const overlay = document.getElementById('cmn-overlay');
-    popup.setAttribute('aria-hidden', 'false');
-    overlay.setAttribute('aria-hidden', 'false');
-  }
-
-  function closeCMN() {
-    const popup = document.getElementById('cmn-popup');
-    const overlay = document.getElementById('cmn-overlay');
-    popup.setAttribute('aria-hidden', 'true');
-    overlay.setAttribute('aria-hidden', 'true');
-  }
-</script>
-      </div>
+  </style>
+</head>
+<body>
+  <section id="hero">
+    <h1 class="glow-h1">Welcome to Mayhem's Home</h1>
+    <h2 class="glow-h2">Where Chaos Meets Cuddles</h2>
+    <p class="glow-tagline">
+      We're the last stop for the oafs that just can't decide if they're heroes-in-training, or chaos gremlins hovering somewhere between chaotic-neutral and bonafide henchmen. They're unruly, loud, and lovable. We rehabilitate them with tough love and structure, turning out some of Oregon's best Emotional Support Sidekicks!
+    </p>
+    <img id="hero-img" src="assets/Hero.png" alt="Hero Image">
+    <div class="chaos-buttons">
+      <a href="https://form.jotform.com/222906589359168" target="_blank" class="btn-comic btn-yellow rainbow-glow-btn offset-btn-1">
+        Sidekick Sign-Up
+      </a>
+      <a href="https://pci.jotform.com/form/243237589041055" target="_blank" class="btn-comic btn-magenta offset-btn-2">
+        Sidekick Adoption Agreement
+      </a>
+      <a href="/join-the-league" class="btn-comic btn-purple offset-btn-3">
+        Join the League
+      </a>
+      <a href="https://controlledchaos.shop" target="_blank" class="btn-comic btn-lime rainbow-glow-btn offset-btn-4">
+        Fuel the Mayhem
+      </a>
+      <a href="/blog" class="btn-comic btn-yellow offset-btn-5">
+        Chaos and Cuddles Blog
+      </a>
+      <a href="#stories" class="btn-comic btn-magenta offset-btn-6">
+        Underdog Stories
+      </a>
+      <a href="/chaos-wrangling-101" class="btn-comic btn-purple offset-btn-7">
+        Chaos Wrangling 101
+      </a>
     </div>
   </section>
-  
-  <section id="hero">
-  <h1 class="glow-h1">Welcome to Mayhem's Home</h1>
-  <h2 class="glow-h2">Where Chaos Meets Cuddles</h2>
-  <p class="glow-tagline">
-    We're the last stop for the oafs that just can't decide if they're heros-in-training, or chaos gremlins hovering somewhere between chaotic-neutral and bonifide henchmen. They're unruly, loud, and totally misunderstood.
-    We rehabilitate them with tough love and structure. Turning out some of Oregon's best Emotion Support Sidekicks!
-  </p>
-  <img id="hero-img" src="assets/Hero.png" alt="hero Image">
-  <div class="chaos-buttons">
-<div style="text-align:center;margin:40px 0;">
-  <span style="display:block;font-size:2rem;margin-bottom:30px;">
-  <div class="chaos-buttons">
-  <!-- Sidekick Sign-Up (GLOW) -->
-  <a href="https://form.jotform.com/222906589359168" target="_blank" class="btn-comic btn-yellow rainbow-glow-btn offset-btn-1">
-    Sidekick Sign-Up
-  </a>
-  <!-- Sidekick Adoption Agreement (NO GLOW) -->
-  <a href="https://pci.jotform.com/form/243237589041055" target="_blank" class="btn-comic btn-magenta offset-btn-2">
-    Sidekick Adoption Agreement
-  </a>
-  <!-- Join the League (NO GLOW) -->
-  <a href="/join-the-league" class="btn-comic btn-purple offset-btn-3">
-    Join the League
-  </a>
-  <!-- Fuel the Mayhem (GLOW) -->
-  <a href="https://controlledchaos.shop" target="_blank" class="btn-comic btn-lime rainbow-glow-btn offset-btn-4">
-    Fuel the Mayhem
-  </a>
-  <!-- Chaos and Cuddles Blog (NO GLOW) -->
-  <a href="/blog" class="btn-comic btn-yellow offset-btn-5">
-    Chaos and Cuddles Blog
-  </a>
-  <!-- Underdog Stories (NO GLOW) -->
-  <a href="#stories" class="btn-comic btn-magenta offset-btn-6">
-    Underdog Stories
-  </a>
-  <!-- Chaos Wrangling 101 (NO GLOW) -->
-  <a href="/chaos-wrangling-101" class="btn-comic btn-purple offset-btn-7">
-    Chaos Wrangling 101
-  </a>
-</div>
+
   <section id="stories">
     <h2 class="glow-h2">Underdog Success Stories</h2>
     <p>From chaos to cuddle-bugs: Meet the legends of Mayhem’s Home.</p>
     <div style="margin-bottom:20px">
       <h3 class="glow-h3">Wiley -AKA- Land Whale</h3>
-<img id="wiley-img" src="assets/wiley.jpg" alt=<Wiley Image">
+      <img id="wiley-img" src="assets/wiley.jpg" alt="Wiley Image">
       <h4 class="glow-h4">Featured in: the Mayhem Times</h4>
-      <p>Wiley was a gift for an elderly woman before the passing of her husband. A precious last memory, she was permitted to do what every wild puppy would do when over loved and under disciplined. When her rambunctious ways caused her owner injury, she had to buckle down and enter sidekick training.  Sadly, during her training, Wiley's owner passed away before she could take her rightful place. Her trainer, an autistic superhero in training, offered to take her in, train her up, and have a sidekick for life. So now Wiley spends her days with an Antihero called Anarchy... he's the brains behind the code!</p>
+      <p>Wiley was a gift for an elderly woman before the passing of her husband. A precious last memory, she was permitted to do what every wild puppy would do when over loved and under disciplined...</p>
     </div>
     <div style="margin-bottom:30px">
       <h3 class="glow-h3">Katie -AKA- Land Seal</h3>
-<img id="katie-img" src="assets/Katie.jpg" alt="hero Image">
+      <img id="katie-img" src="assets/Katie.jpg" alt="Katie Image">
       <h4 class="glow-h4">Adopted! Congratulations to her new family</h4>
-      <p>Katie was a villains dream. Her voice could level a nervous system with one seal-like wail from her oversized snout. Facing prison for her loud mouth ways, Katie came to us for rehab, where she met her hero. The survivor building a new life free from control took in the ruckus maker. Now, she’s known for her gentle cuddles and has a home at last, but not before surprising everyone with a litter of 8 pups after swearing she was spayed for years. Katie is a liar, some habits are too hard to break! She's officially fixed now.</p>
+      <p>Katie was a villain's dream. Her voice could level a nervous system with one seal-like wail from her oversized snout. Facing prison for her loud mouth ways, Katie came to us for rehab, where she found her forever home.</p>
     </div>
     <div>
       <h3 class="glow-h3">Alder & Douglas -AKA- The Spider Twins</h3>
-<img id="Alder-img" src="assets/Alder.jpg" alt="alder Image">
-<img id="douglas-img" src="assets/Douglas .jpg" alt="douglas Image">
+      <img id="Alder-img" src="assets/Alder.jpg" alt="Alder Image">
+      <img id="douglas-img" src="assets/Douglas.jpg" alt="Douglas Image">
       <h4 class="glow-h4">Still looking for their superhero assignment</h4>
-      <p>The wall-climbing,roof-dwellers who are always on the radar of some agency. Counter-surfing, hole digging, couch squatters... Almost straight 2 years of chaos, until they decided to mellow into good boys, almost. If you don't mind a little garbage theft, these boys could be the perfect sidekicks... Could your home be their next adventure?</p>
+      <p>The wall-climbing, roof-dwellers who are always on the radar of some agency. Counter-surfing, hole digging, couch squatters... Almost straight 2 years of chaos, until they decided to mellow out and look for their forever home.</p>
     </div>
   </section>
+
   <section id="fund">
     <h2 class="glow-h2">Save the City From Drowning in Pets</h2>
     <h3 class="glow-h3">Madame Gatekeeper is at it again!!!</h3>
     <p>
-      Keeping well-meaning families from accessing affordable spay &amp; neuter services so they can be responsible pet parents. The cycle of pet overpopulation is threatening to drown the city. Help us break the cycle!
+      Keeping well-meaning families from accessing affordable spay &amp; neuter services so they can be responsible pet parents. The cycle of pet overpopulation is threatening to drown the city. Support our mission!
     </p>
     <div style="background:#222;border:4px solid var(--ink);border-radius:18px;box-shadow:8px 8px 0 var(--ink);padding:20px;max-width:600px;margin:0 auto">
       <div style="background:var(--magenta);height:24px;width:20%;border-radius:12px"></div>
@@ -511,44 +325,45 @@ p, li, .body-text {
         exclusive <strong>10% merch discount</strong> sent to you by email as a subscriber benefit.
       </p>
       <a href="https://checkout.square.site/merchant/ML3P53GMV910M/checkout/6OCEZCMDXKLHS52CC2VM5Y3T"
-         target="_blank" rel="noopener noreferrer" class="btn-comic btn-lime rainbow-glow-btn" id="btnSubscribe">Subscribe – $10/month</a>
+         target="_blank" rel="noopener noreferrer" class="btn-comic btn-lime" id="btnSubscribe">Subscribe – $10/month</a>
       <p style="margin-top:10px;color:#aaa;font-size:1.1rem">
         Discount codes are delivered to active subscribers via email. Subscribers get early access to exclusive content.
       </p>
       <p style="margin-top:6px;color:#aaa;font-size:1.1rem">
-        Suit up with the Chaos League and showcase your mayhem! Shop now at the <a href="https://www.controlledchaos.shop" target="_blank" rel="noopener noreferrer" style="color:var(--yellow)">Chaos League Merch Store</a>.
+        Suit up with the Chaos League and showcase your mayhem! Shop now at the <a href="https://www.controlledchaos.shop" target="_blank" rel="noopener noreferrer" style="color:var(--yellow)">Chaos Store</a>.
       </p>
     </div>
   </section>
-<!-- Adoptable Dogs Widget -->
-<section id="adopt">
-  <h3 class="glow-h3">Fight rising unemployment! Put a sidekick to work!</h3>
-  <script>
-    var AAPPetScrollerSettings = {
-      'searchtools_box_width': '600', // Adjusted width
-      'searchtools_box_height': '600', // Adjusted height
-      'size': '600x600_listnew', // Matched size
-      'title': 'Available Sidekicks',
-      'clan_name': 'dog',
-      'color': 'magenta',
-      'shelter_id': '264806',
-      'sort_by': 'uploaded_timestamp_oldest'
-    };
-  </script>
-  <script src="https://images.adoptapet.com/js/st-portable-pet-list.js"></script>
-</section>
+
+  <section id="adopt">
+    <h3 class="glow-h3">Fight rising unemployment! Put a sidekick to work!</h3>
+    <!-- Widget integration code here -->
+    <script>
+      var AAPPetScrollerSettings = {
+        'searchtools_box_width': '600',
+        'searchtools_box_height': '600',
+        'size': '600x600_listnew',
+        'title': 'Available Sidekicks',
+        'clan_name': 'dog',
+        'color': 'magenta',
+        'shelter_id': '264806',
+        'sort_by': 'uploaded_timestamp_oldest'
+      };
+    </script>
+    <script src="https://images.adoptapet.com/js/st-portable-pet-list.js"></script>
+  </section>
+
   <footer>
     <h2 class="glow-h2">Follow the Mayhem</h2>
-    <a href="https://facebook.com/YOURPAGE" target="_blank" rel="noopener noreferrer">Facebook</a>
-    <a href="https://instagram.com/YOURPAGE" target="_blank" rel="noopener noreferrer">Instagram</a>
-    <a href="https://tiktok.com/@YOURPAGE" target="_blank" rel="noopener noreferrer">TikTok</a>
-  <span id="currentYear"></span>
-<script>
-  document.getElementById('currentYear').textContent = new Date().getFullYear();
-</script>
-<p> <h2>501c3 Eligible</p></h2>
+    <a href="https://facebook.com/YOURPAGE" target="_blank" rel="noopener noreferrer" style="color:var(--yellow);margin:0 10px;">Facebook</a>
+    <a href="https://instagram.com/YOURPAGE" target="_blank" rel="noopener noreferrer" style="color:var(--magenta);margin:0 10px;">Instagram</a>
+    <a href="https://tiktok.com/@YOURPAGE" target="_blank" rel="noopener noreferrer" style="color:var(--purple);margin:0 10px;">TikTok</a>
+    <div style="color:var(--yellow);margin-top:10px;">
+      <span id="currentYear"></span> | <span>501c3 Eligible</span>
+    </div>
+    <script>
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
   </footer>
-  <a href="#contact" id="contactBubble" class="contact-bubble">CONTACT</a>
-  <div id="contactPanel" class="contact-panel"></div>
 </body>
 </html>
